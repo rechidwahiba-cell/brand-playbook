@@ -19,7 +19,7 @@ Answer simple questions about your brand and leave with a playbook your whole te
 
 ## The brand compass
 
-Personality is chosen on a model made for this tool. Two questions, head or heart and calm or spark, place eight characters around a compass: the Trailblazer, the Enthusiast, the Companion, the Host, the Anchor, the Maker, the Guide and the Challenger. Each one comes with how it sounds, what it does best and what to watch out for.
+Personality is chosen on a model made for this tool. Two questions, head or heart and calm or spark, place eight characters around a compass: the Trailblazer, the Enthusiast, the Companion, the Host, the Anchor, the Maker, the Guide and the Challenger. Each one comes with how it sounds, what it does best and what to watch out for. It is a simple aid to put words on a personality, offered as an illustration and a starting point for discussion, not a validated model.
 
 ## What makes it more than a template
 
