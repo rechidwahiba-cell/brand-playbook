@@ -110,47 +110,67 @@ footer{margin:34px 0 28px;text-align:center;color:var(--mute);font-size:.84rem}
 @media(max-width:820px){.build{grid-template-columns:1fr}.prev{grid-column:1}.steps{position:static;max-height:none;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}.grp{grid-column:1/-1}.side{justify-items:start}.deck{grid-template-columns:1fr}}
 
 /* slides: everything in em, scaled by the slide width */
-.slide{--b1:#14233F;--b2:#C9A45C;--b3:#0E7C86;--on1:#fff;--hf:Georgia,serif;--bf:system-ui,"Segoe UI",sans-serif;aspect-ratio:16/9;container-type:inline-size;background:#fff;color:#1b1b1f;border-radius:14px;overflow:hidden;position:relative;box-shadow:var(--shadow);border:1px solid var(--line)}
-.slide .in{position:absolute;inset:0;font-size:1.95cqw;padding:3.9em 3.7em 2.2em 4.3em;display:flex;flex-direction:column;gap:1.05em;font-family:var(--bf);line-height:1.4}
-.slide .bar{position:absolute;left:0;top:0;bottom:0;width:.9em;font-size:1.5cqw;background:linear-gradient(var(--b1),var(--b2))}
-.slide .tp{position:absolute;top:1.7em;left:5.6em;right:4.8em;font-size:1.5cqw;display:flex;justify-content:space-between;align-items:center;gap:1em;font-family:var(--bf)}
-.slide .tp span{font-size:.78em;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--b1);opacity:.75}
-.slide .tp img{height:2.3em;max-width:9em;object-fit:contain}
-.slide .tp b{font-family:var(--hf);color:var(--b1);font-size:1.05em}
-.slide h3{font-family:var(--hf);font-size:2.25em;line-height:1.1;margin:0;color:var(--b1);letter-spacing:-.01em}
-.slide .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.3em;flex:1;min-height:0}
+.slide{--b1:#14233F;--b2:#C9A45C;--b3:#0E7C86;--on1:#fff;--hf:Georgia,serif;--bf:system-ui,"Segoe UI",sans-serif;aspect-ratio:16/9;container-type:inline-size;background:#fff;color:#15171c;border-radius:14px;overflow:hidden;position:relative;box-shadow:var(--shadow);border:1px solid var(--line)}
+.slide>*{font-size:1.5cqw}
+.slide .pg{position:absolute;left:0;top:0;height:.36em;width:18%;background:linear-gradient(90deg,var(--b1),var(--b2))}
+.slide .tp{position:absolute;top:1.55em;left:3.6em;right:3.6em;display:flex;justify-content:space-between;align-items:center;gap:1em;font-family:var(--bf)}
+.slide .tp span{font-size:.7em;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--b1);opacity:.6}
+.slide .tp img{height:2em;max-width:9em;object-fit:contain}
+.slide .tp b{font-family:var(--hf);color:var(--b1);font-size:1em}
+.slide .fo{position:absolute;bottom:1.2em;left:3.6em;right:3.6em;display:flex;justify-content:space-between;font-size:1.02cqw;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#15171c;opacity:.42;font-family:var(--bf)}
+.slide .in{position:absolute;inset:0;font-size:1.9cqw;padding:3.6em 2.9em 2.5em;display:grid;grid-template-columns:28% 1fr;gap:2.4em;font-family:var(--bf);line-height:1.42}
+.slide .in.wide{grid-template-columns:1fr;grid-template-rows:auto 1fr;gap:.9em}
+.slide .lt{display:flex;flex-direction:column;gap:.75em;min-width:0;padding-top:.3em}
+.slide .lt .no{font-family:var(--hf);font-size:5.6em;line-height:.82;font-weight:700;color:transparent;-webkit-text-stroke:.016em color-mix(in srgb,var(--b1) 42%,#fff);letter-spacing:-.04em}
+.slide .lt .rule{width:2.8em;height:.26em;background:var(--b2);border-radius:9em}
+.slide .wide .lt{flex-direction:row;align-items:center;gap:.9em;padding-top:0}
+.slide .wide .lt .rule{order:-1;width:.26em;height:2em}
+.slide h3{font-family:var(--hf);font-size:1.95em;line-height:1.08;margin:0;color:var(--b1);letter-spacing:-.015em}
+.slide .rt{display:flex;flex-direction:column;gap:.95em;min-width:0;justify-content:center}
+.slide .rt>*{flex-shrink:0}
+.slide .cols{display:grid;grid-template-columns:1fr 1fr;gap:.95em 1.5em;flex:none}
 .slide .c3{grid-template-columns:1fr 1fr 1fr}
-.slide .cols{flex:none}.slide .in>*{flex-shrink:0}.slide .blk{overflow:visible}
-.slide .blk{background:color-mix(in srgb,var(--b1) 6%,#fff);border-radius:.8em;padding:.95em 1.15em;overflow:hidden;display:flex;flex-direction:column;gap:.35em;border-top:.22em solid var(--b2)}
-.slide .blk h4{margin:0;font-size:.76em;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--b1) 75%,#000);font-family:var(--bf)}
-.slide p{margin:0}.slide ul{margin:0;padding-left:1.1em;display:grid;gap:.25em}
+.slide .blk{border-top:.08em solid color-mix(in srgb,var(--b1) 24%,#fff);padding:.65em 0 0;display:flex;flex-direction:column;gap:.32em;min-width:0}
+.slide .blk h4{margin:0;font-size:.68em;letter-spacing:.14em;text-transform:uppercase;color:var(--b1);opacity:.62;font-family:var(--bf);font-weight:700}
+.slide p{margin:0}.slide ul{margin:0;padding-left:1.05em;display:grid;gap:.22em}
+.slide li::marker{color:var(--b2)}
 .slide .chips{display:flex;flex-wrap:wrap;gap:.4em}
-.slide .chips span{padding:.3em .85em;border-radius:99em;background:var(--b1);color:var(--on1);font-weight:600;font-size:.95em}
-.slide .chips.alt span{background:none;border:.12em solid var(--b1);color:var(--b1)}
-.slide .big{font-family:var(--hf);font-size:1.75em;line-height:1.28;color:#1b1b1f}
-.slide .ph{opacity:.38;font-style:italic}
-.slide .sw{display:flex;gap:.8em}
-.slide .sw div{flex:1;border-radius:.7em;padding:2.4em .8em .7em;color:#fff;font-size:.82em;font-weight:700;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(0,0,0,.08)}
-.slide .kv{display:grid;gap:.5em}
-.slide .kv div{display:grid;grid-template-columns:34% 1fr;gap:1em;padding:.45em 0;border-bottom:1px solid color-mix(in srgb,var(--b1) 14%,#fff)}
+.slide .chips span{padding:.28em .85em;border-radius:99em;background:var(--b1);color:var(--on1);font-weight:600;font-size:.92em}
+.slide .chips.alt span{background:none;border:.1em solid color-mix(in srgb,var(--b1) 55%,#fff);color:var(--b1)}
+.slide .big{font-family:var(--hf);font-size:1.5em;line-height:1.3;color:#15171c}
+.slide .ph{opacity:.34;font-style:italic}
+.slide .sw{display:flex;gap:.7em}
+.slide .sw div{flex:1;border-radius:.6em;padding:2.6em .8em .7em;font-size:.8em;font-weight:700;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(0,0,0,.06)}
+.slide .kv{display:grid;gap:0}
+.slide .kv div{display:grid;grid-template-columns:32% 1fr;gap:1em;padding:.42em 0;border-bottom:.06em solid color-mix(in srgb,var(--b1) 12%,#fff)}
+.slide .kv div:last-child{border-bottom:0}
 .slide .kv b{color:var(--b1)}
-.slide.cover{background:var(--b1);color:var(--on1)}
-.slide.cover .in{justify-content:center;padding-left:5em}
-.slide.cover p{font-size:1.15em;opacity:.9}
-.slide.cover h3{color:var(--on1);font-size:4em}
-.slide.cover .sub{font-size:1.3em;opacity:.85;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
-.slide.cover img{max-height:7em;max-width:20em;object-fit:contain;align-self:flex-start;background:#fff;border-radius:.8em;padding:.8em}
-.slide.cover .bar{background:var(--b2)}
-.slide.div{background:color-mix(in srgb,var(--b1) 92%,#000);color:var(--on1)}
-.slide.div .in{justify-content:center}.slide.div h3{color:var(--on1);font-size:3.2em}.slide.div .n{font-size:1.1em;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--b2)}
-.slide .wheel{width:100%;height:100%;max-height:22em;display:block}
-.wheel path{stroke:#fff;stroke-width:2}
-.wheel .wn{font:700 10.5px system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;text-anchor:middle;dominant-baseline:middle;fill:#1b1b1f}
-.wheel .wm{font:600 8.4px system-ui,sans-serif;text-anchor:middle;dominant-baseline:middle;fill:#1b1b1f}
-.wheel .on .wm{fill:var(--on1)}.wheel .on .wn{fill:var(--b1);font-size:11.5px}
-.wheel .wq{font:700 8px system-ui,sans-serif;text-anchor:middle;fill:#5c6478;text-transform:uppercase;letter-spacing:.05em}
-.wheel .pk{cursor:pointer}.wheel .pk:hover path{filter:brightness(.93)}
-.wpick{--b1:#14233F;--b2:#C9A45C;--b3:#0E7C86;--on1:#fff;max-width:400px;justify-self:center;width:100%}
+/* cover and dividers */
+.slide.cover,.slide.div{color:var(--on1);background:radial-gradient(62% 85% at 88% 8%,color-mix(in srgb,var(--b3) 88%,transparent),transparent 72%),radial-gradient(55% 75% at 104% 104%,color-mix(in srgb,var(--b2) 82%,transparent),transparent 70%),linear-gradient(135deg,var(--b1),color-mix(in srgb,var(--b1) 72%,#000))}
+.slide.cover:before,.slide.div:before{content:"";position:absolute;inset:0;font-size:1cqw;background:repeating-linear-gradient(115deg,rgba(255,255,255,.055) 0 .14em,transparent .14em 2.4em)}
+.slide .gi{position:absolute;right:-1%;bottom:-.24em;font-family:var(--hf);font-size:44cqw;line-height:1;font-weight:700;color:transparent;-webkit-text-stroke:.008em color-mix(in srgb,var(--on1) 62%,transparent);letter-spacing:-.05em;pointer-events:none}
+.slide.div .gi{font-size:38cqw;right:2%;bottom:-.16em}
+.slide.cover .in,.slide.div .in{display:flex;flex-direction:column;justify-content:flex-end;gap:.7em;padding:3.4em 3.4em 3.2em}
+.slide.cover .tp span,.slide.div .tp span{color:var(--on1);opacity:.85}
+.slide.cover .tp b{color:var(--on1)}
+.slide.cover .tp img{background:#fff;border-radius:.5em;padding:.35em .6em;height:2.7em}
+.slide.cover h3{color:var(--on1);font-size:4.4em;line-height:.98;letter-spacing:-.03em;max-width:62%}
+.slide.cover .ln,.slide.div .ln{width:4.5em;height:.3em;background:var(--b2);border-radius:9em}
+.slide.cover .meta{font-size:1.05em;opacity:.9;letter-spacing:.02em;max-width:60%}
+.slide.div h3{color:var(--on1);font-size:3.3em;letter-spacing:-.025em;max-width:60%}
+.slide.div .n{font-size:.8em;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.85}
+.slide.div ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.35em .5em;max-width:62%;margin-top:.4em}
+.slide.div li{font-size:.78em;padding:.25em .8em;border-radius:99em;border:.08em solid color-mix(in srgb,var(--on1) 45%,transparent)}
+.slide .wheel{width:100%;height:auto;max-height:25em;display:block}
+.wheel path{stroke:#fff;stroke-width:3;transition:.25s}
+.wheel .wn{font:800 11px system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.wheel .wm{font:600 9.6px system-ui,sans-serif;fill:#fff;letter-spacing:.04em}
+.wheel .wq{font:700 7.6px system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;fill:#8a8f9c}
+.wheel .wc1{font-weight:700;font-size:21px;text-anchor:middle}
+.wheel .wc2{font:700 8.6px system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;text-anchor:middle;opacity:.82}
+.wheel .pk{cursor:pointer}.wheel .pk:hover path{filter:brightness(1.08) saturate(1.15)}
+.wheel .dim{opacity:.34}
+.wpick{--b1:#14233F;--b2:#C9A45C;--b3:#0E7C86;--on1:#fff;--hf:Georgia,serif;max-width:460px;justify-self:center;width:100%}
 .sliders{display:grid;gap:8px}
 .sliders div{display:grid;grid-template-columns:92px 1fr 92px;gap:10px;align-items:center;font-size:.86rem;font-weight:600}
 .sliders div span:last-child{text-align:right}
@@ -195,6 +215,10 @@ footer{margin:34px 0 28px;text-align:center;color:var(--mute);font-size:.84rem}
 .slide .mail{background:#fff;border:.1em solid color-mix(in srgb,var(--b1) 18%,#fff);border-radius:.9em;overflow:hidden;box-shadow:0 .4em 1.2em rgba(0,0,0,.08)}
 .slide .mail .mh{background:color-mix(in srgb,var(--b1) 8%,#fff);padding:.7em 1em;display:grid;gap:.2em;font-size:.86em;border-bottom:.1em solid color-mix(in srgb,var(--b1) 14%,#fff)}
 .slide .mail .mb{padding:1em;display:grid;gap:.6em;white-space:pre-line}
+.slide .stats div{background:none;border-radius:0;padding:.7em 0 0;border-top:.24em solid var(--b2)}
+.slide .stats b{font-size:2.7em}
+.slide .deco{display:none}
+.slide .post,.slide .mail{box-shadow:0 .5em 1.6em rgba(0,0,0,.1)}
 @media print{
   @page{size:13.333in 7.5in;margin:0}
   body{background:#fff}
@@ -227,7 +251,7 @@ footer{margin:34px 0 28px;text-align:center;color:var(--mute);font-size:.84rem}
 <main class="wrap" id="main"></main>
 <div id="toast" role="status" aria-live="polite"></div>
 <footer><div class="wrap">Everything you type, including your logo, stays in your browser. Designed by W.R., a marketer, and built with an AI coding assistant.
-<p style="max-width:820px;margin:12px auto 0;padding:0 20px;font-size:.78rem;line-height:1.5;opacity:.85"><b>Disclaimer.</b> This tool was developed independently by one person, from personal professional experience. It is a free aid provided as is, for general information only, with no guarantee that it is complete, accurate, up to date or suited to your situation. It is not professional, legal or technical advice. You are solely responsible for how you use it and for the decisions you make with it, and the author accepts no liability for any loss or damage arising from its use. Product and company names are mentioned for reference only: this tool is not affiliated with or endorsed by any of them.</p></div></footer>
+<p style="max-width:1500px;margin:10px auto 0;padding:0 20px;font-size:.76rem;line-height:1.45;opacity:.85"><b>Disclaimer.</b> This tool was developed independently by one person, from personal professional experience. It is a free aid provided as is, for general information only, with no guarantee that it is complete, accurate, up to date or suited to your situation. It is not professional, legal or technical advice. You are solely responsible for how you use it and for the decisions you make with it, and the author accepts no liability for any loss or damage arising from its use. Product and company names are mentioned for reference only: this tool is not affiliated with or endorsed by any of them.</p></div></footer>
 
 <script>
 const $=id=>document.getElementById(id);
@@ -364,16 +388,21 @@ const NS="http://www.w3.org/2000/svg";
 const sv=(tag,a,...k)=>{const e=document.createElementNS(NS,tag);for(const x in a||{}){if(a[x]==null)continue;if(x==="text")e.textContent=a[x];else if(x.startsWith("on"))e.addEventListener(x.slice(2),a[x]);else e.setAttribute(x,a[x])}k.flat().forEach(c=>c&&e.appendChild(c));return e};
 const WH=["The Creator","The Innocent","The Sage","The Explorer","The Rebel","The Magician","The Hero","The Lover","The Jester","The Everyman","The Caregiver","The Ruler"];
 const MOT=["Innovation","Safety","Knowledge","Freedom","Liberation","Power","Mastery","Intimacy","Pleasure","Belonging","Service","Control"];
-function wheel(sel,pick){const C=200,xy=(r,d)=>{const a=d*Math.PI/180;return[+(C+r*Math.sin(a)).toFixed(1),+(C-r*Math.cos(a)).toFixed(1)]},P2=(r,d)=>xy(r,d).join(" "),seg=(r1,r2,a0,a1)=>"M"+P2(r1,a0)+"L"+P2(r2,a0)+"A"+r2+" "+r2+" 0 0 1 "+P2(r2,a1)+"L"+P2(r1,a1)+"A"+r1+" "+r1+" 0 0 0 "+P2(r1,a0)+"Z";
-  const g=sv("svg",{viewBox:"0 0 400 400",class:"wheel",role:"img","aria-label":"The twelve brand archetypes"+(sel?": "+sel+" is selected":"")});
-  WH.forEach((n,i)=>{const a0=-30+30*i,mid=a0+15,on=n===sel,q=i===0||i>=10?0:Math.floor((i-1)/3)+1,tint=["var(--b1)","var(--b3)","var(--b2)","var(--b3)"][q],[nx,ny]=xy(174,mid),[mx,my]=xy(121,mid);
-    g.appendChild(sv("g",{class:(on?"on ":"")+(pick?"pk":""),onclick:pick?()=>pick(n):null},
-      sv("path",{d:seg(92,150,a0,a0+30),style:"fill:"+(on?"var(--b1)":"color-mix(in srgb,"+tint+" "+(i%2?22:34)+"%,#fff)")}),
-      sv("path",{d:seg(152,197,a0,a0+30),style:"fill:"+(on?"color-mix(in srgb,var(--b2) 45%,#fff)":"#f3f2ee")}),
-      sv("text",{x:nx,y:ny,class:"wn",text:n.replace("The ","")}),sv("text",{x:mx,y:my,class:"wm",text:MOT[i]})))});
-  g.appendChild(sv("circle",{cx:C,cy:C,r:88,style:"fill:#ecebe7;stroke:#fff;stroke-width:2"}));
-  g.appendChild(sv("path",{d:"M112 200H288M200 112V288",style:"stroke:#fff;stroke-width:2;fill:none"}));
-  [["Provide","structure",-1,-1],["Explore and","understand",1,-1],["Leave","a mark",1,1],["Connect","with others",-1,1]].forEach(([a,b,dx,dy])=>{g.appendChild(sv("text",{x:C+dx*42,y:C+dy*36-5,class:"wq",text:a}));g.appendChild(sv("text",{x:C+dx*42,y:C+dy*36+6,class:"wq",text:b}))});
+let WID=0;
+const hue=c=>{const n=parseInt(c.slice(1),16),r=(n>>16)/255,g=(n>>8&255)/255,b=(n&255)/255,mx=Math.max(r,g,b),mn=Math.min(r,g,b),d=mx-mn;if(!d)return 215;let x=mx===r?((g-b)/d)%6:mx===g?(b-r)/d+2:(r-g)/d+4;return Math.round((x*60+360)%360)};
+function wheel(sel,pick){const C=230,id="w"+(++WID),h0=hue(hex("c1")),xy=(r,d)=>{const a=d*Math.PI/180;return (C+r*Math.sin(a)).toFixed(1)+" "+(C-r*Math.cos(a)).toFixed(1)};
+  const seg=(r1,r2,a0,a1)=>"M"+xy(r1,a0)+"L"+xy(r2,a0)+"A"+r2+" "+r2+" 0 0 1 "+xy(r2,a1)+"L"+xy(r1,a1)+"A"+r1+" "+r1+" 0 0 0 "+xy(r1,a0)+"Z";
+  const up=m=>{m=((m+180)%360+360)%360-180;return Math.abs(m)<90},tp=(r,a0,a1)=>up((a0+a1)/2)?"M"+xy(r,a0)+"A"+r+" "+r+" 0 0 1 "+xy(r,a1):"M"+xy(r,a1)+"A"+r+" "+r+" 0 0 0 "+xy(r,a0);
+  const g=sv("svg",{viewBox:"0 0 460 460",class:"wheel",role:"img","aria-label":"The twelve brand archetypes"+(sel?": "+sel+" is selected":"")}),defs=sv("defs");g.appendChild(defs);
+  const curved=(pid,d,cls,txt,fill)=>{defs.appendChild(sv("path",{id:pid,d,style:"stroke:none;fill:none"}));const t=sv("text",{class:cls,dy:".35em",style:fill?"fill:"+fill:null}),tpx=sv("textPath",{href:"#"+pid,startOffset:"50%","text-anchor":"middle",text:txt});t.appendChild(tpx);return t};
+  [["Provide structure",270],["Explore and understand",0],["Leave a mark",90],["Connect with others",180]].forEach(([t,a],k)=>g.appendChild(curved(id+"q"+k,tp(218,a+4,a+86),"wq",t)));
+  WH.forEach((n,i)=>{const a0=-30+30*i,on=n===sel,hh=(h0+i*30)%360,col="hsl("+hh+" 58% "+(on?44:52)+"%)",soft="hsl("+hh+" 55% "+(on?86:94)+"%)",o=on?8:0;
+    g.appendChild(sv("g",{class:(sel&&!on?"dim ":"")+(pick?"pk":""),onclick:pick?()=>pick(n):null},
+      sv("path",{d:seg(152+o/2,202+o,a0,a0+30),style:"fill:"+soft}),sv("path",{d:seg(96,150+o/2,a0,a0+30),style:"fill:"+col}),
+      curved(id+"n"+i,tp(177+o*.8,a0+1,a0+29),"wn",n.replace("The ",""),on?"hsl("+hh+" 62% 32%)":"#22252c"),curved(id+"m"+i,tp(123+o/4,a0+1,a0+29),"wm",MOT[i])))});
+  g.appendChild(sv("circle",{cx:C,cy:C,r:90,style:"fill:var(--b1);stroke:#fff;stroke-width:3"}));
+  g.appendChild(sv("text",{x:C,y:sel?C-2:C+2,class:"wc1",style:"fill:var(--on1);font-family:var(--hf)",text:sel?sel.replace("The ",""):"12"}));
+  g.appendChild(sv("text",{x:C,y:C+20,class:"wc2",style:"fill:var(--on1)",text:sel?MOT[WH.indexOf(sel)]:"archetypes"}));
   return g}
 const SCALES=[["Formal","Casual"],["Serious","Playful"],["Reserved","Enthusiastic"],["Factual","Emotional"]];
 const tv=i=>{const n=parseInt(S.d["t"+i],10);return n>=1&&n<=5?n:3};
@@ -391,12 +420,16 @@ const UL=(a,ph)=>a.length?h("ul",null,a.map(x=>h("li",{text:x}))):h("p",{class:"
 const BL=(t,...k)=>h("div",{class:"blk"},h("h4",{text:t}),k);
 const CH=(a,ph,alt)=>a.length?h("div",{class:"chips"+(alt?" alt":"")},a.map(x=>h("span",{text:x}))):h("p",{class:"ph",text:ph});
 const KVL=(a,ph)=>a.length?h("div",{class:"kv"},a.map(([x,y])=>h("div",null,h("b",{text:x}),h("span",{text:y})))):h("p",{class:"ph",text:ph});
-function slide(label,title,...body){const e=h("div",{class:"slide"},h("div",{class:"bar"}),h("div",{class:"tp"},h("span",{text:label}),S.logo?h("img",{src:S.logo,alt:""}):h("b",{text:NAME()})),h("div",{class:"in"},h("h3",{text:title}),body));return theme(e)}
+let SN="";
+function slide(label,title,...body){const wide=body[0]==="wide";if(wide)body.shift();
+  return theme(h("div",{class:"slide"},h("div",{class:"pg"}),h("div",{class:"tp"},S.logo?h("img",{src:S.logo,alt:""}):h("b",{text:NAME()}),h("span",{text:label})),
+    h("div",{class:"in"+(wide?" wide":"")},h("div",{class:"lt"},SN&&!wide?h("div",{class:"no","aria-hidden":"true",text:SN}):null,h("h3",{text:title}),h("div",{class:"rule"})),h("div",{class:"rt"},body)),
+    h("div",{class:"fo"},h("span",{text:NAME()+"  \u00b7  Brand playbook"}),h("span",{class:"pn"}))))}
 function theme(e){const c1=hex("c1");e.style.setProperty("--b1",c1);e.style.setProperty("--b2",hex("c2"));e.style.setProperty("--b3",hex("c3"));e.style.setProperty("--on1",ratio(c1,"#ffffff")>=3?"#fff":"#16181d");e.style.setProperty("--hf",(FONTS[S.d.font]||FONTS.serif)[1]);return e}
 const SL={
- cover:()=>theme(h("div",{class:"slide cover"},h("div",{class:"deco",style:"right:-12%;top:-28%;width:52%;aspect-ratio:1;background:var(--b2);opacity:.9"}),h("div",{class:"deco",style:"right:10%;bottom:-34%;width:38%;aspect-ratio:1;background:var(--b3);opacity:.85"}),h("div",{class:"deco",style:"right:27%;top:16%;width:9%;aspect-ratio:1;border:.5cqw solid var(--on1);opacity:.5"}),h("div",{class:"bar"}),h("div",{class:"in"},S.logo?h("img",{src:S.logo,alt:""}):null,h("div",{class:"sub",text:"Brand playbook"}),h("h3",{text:NAME()}),h("p",{text:[v("tagline"),v("version")||stamp()].filter(Boolean).join("  \u00b7  ")})))),
- div:(n,t)=>theme(h("div",{class:"slide div"},h("div",{class:"deco",style:"right:-8%;top:50%;transform:translateY(-50%);width:44%;aspect-ratio:1;border:2.4cqw solid var(--b2);opacity:.55"}),h("div",{class:"in"},h("div",{class:"n",text:"Part "+n+" of "+GROUPS.length}),h("h3",{text:t})))),
- s1:()=>slide("Identity","Our identity at a glance",h("div",{class:"cols"},BL("Logo and tagline",S.logo?h("img",{src:S.logo,alt:"",style:"max-height:6em;max-width:14em;object-fit:contain;align-self:flex-start"}):h("p",{class:"big",text:NAME()}),P(v("tagline"),"Your tagline")),BL("Colours and type",h("div",{class:"sw"},["c1","c2","c3"].map((k,i)=>h("div",{style:"background:"+hex(k)+";color:"+(ratio(hex(k),"#ffffff")>=3?"#fff":"#16181d")},["Main","Second","Accent"][i],h("span",{text:hex(k).toUpperCase()})))),h("p",{style:"font-family:var(--hf);font-size:1.5em;color:var(--b1)",text:"Headings look like this"}),h("p",{text:"And body text looks like this."})))),
+ cover:()=>theme(h("div",{class:"slide cover"},h("div",{class:"gi","aria-hidden":"true",text:NAME().charAt(0).toUpperCase()}),h("div",{class:"tp"},S.logo?h("img",{src:S.logo,alt:""}):h("b",{text:NAME()}),h("span",{text:v("version")||stamp()})),h("div",{class:"in"},h("div",{class:"n",style:"font-size:.8em;letter-spacing:.24em;text-transform:uppercase;font-weight:700;opacity:.85",text:"Brand playbook"}),h("h3",{text:NAME()}),h("div",{class:"ln"}),h("p",{class:"meta",text:v("tagline")||v("what")||"How we look, sound and show up"})))),
+ div:(n,t)=>theme(h("div",{class:"slide div"},h("div",{class:"gi","aria-hidden":"true",text:"0"+n}),h("div",{class:"in"},h("div",{class:"n",text:"Part "+n+" of "+GROUPS.length}),h("h3",{text:t}),h("div",{class:"ln"}),h("ul",null,visible().filter(x=>x.g===n-1).map(x=>h("li",{text:x.t})))))),
+ s1:()=>slide("Identity","Our identity at a glance","wide",h("div",{class:"cols"},BL("Logo and tagline",S.logo?h("img",{src:S.logo,alt:"",style:"max-height:6em;max-width:14em;object-fit:contain;align-self:flex-start"}):h("p",{class:"big",text:NAME()}),P(v("tagline"),"Your tagline")),BL("Colours and type",h("div",{class:"sw"},["c1","c2","c3"].map((k,i)=>h("div",{style:"background:"+hex(k)+";color:"+(ratio(hex(k),"#ffffff")>=3?"#fff":"#16181d")},["Main","Second","Accent"][i],h("span",{text:hex(k).toUpperCase()})))),h("p",{style:"font-family:var(--hf);font-size:1.5em;color:var(--b1)",text:"Headings look like this"}),h("p",{text:"And body text looks like this."})))),
  s2:()=>slide("Context","Why this playbook",h("div",{class:"cols"},BL("What we do",P(v("what"),"What you do, in one sentence")),BL("Where we stand",P([v("market"),v("stage")].filter(Boolean).join(". "),"Market and stage of the brand"))),BL("What this playbook must make possible",P(v("goal"),"The objective of the playbook"))),
  s3:()=>slide("Starting point","From how we are seen to how we want to be seen",h("div",{class:"flow"},BL("Today, people say",CH(L("seen"),"Three words",1)),h("div",{class:"arr","aria-hidden":"true",text:"\u2192"}),BL("Tomorrow, we want to hear",CH(L("want"),"Three words"))),BL("What has to change",P(v("gap"),"The gap to close"))),
  s4:()=>slide("Audience","Who we talk to",h("div",{class:"cols"},BL("Our persona",h("div",{class:"who"},h("div",{class:"av","aria-hidden":"true",text:(v("persona")||"?").charAt(0).toUpperCase()}),h("div",null,h("b",{text:v("persona")||"Name, age"}),P(v("aud"),"Priority audience"))),P(v("portrait"),"Their portrait in one sentence")),BL("Their problem",P(v("problem"),"In their own words"))),h("div",{class:"cols"},BL("What they look for",P(v("seek"),"What they hope to find")),BL("What holds them back",UL(L("objections"),"Their objections")))),
@@ -405,26 +438,27 @@ const SL={
  s7:()=>slide("Positioning","Our place in people's minds",h("p",{class:"big",text:G.position()}),BL("What makes us different",UL(L("diffs"),"Your differences"))),
  s8:()=>{const pr=L("proofs"),st=pr.map(statParts),big=pr.filter((x,i)=>st[i]).slice(0,6),rest=pr.filter(x=>!big.includes(x));return slide("Proof","Why people can believe us",big.length?h("div",{class:"stats"},big.map(x=>{const [a,b]=statParts(x);return h("div",null,h("b",{text:a}),h("span",{text:b}))})):null,rest.length||!big.length?BL(big.length?"And also":"Our proof",UL(rest,"Numbers, testimonials, references")):null)},
  s9:()=>slide("Architecture","How our names fit together",BL(v("arch")||"Our model",L("archnames").length?h("div",{class:"tree"},h("div",{class:"root",text:NAME()}),h("div",{class:"stem"}),h("div",{class:"kids"},L("archnames").slice(0,6).map(x=>h("div",{class:"kid"},h("span",{text:x}))))):h("p",{class:"ph",text:"Your offers and product names"})),BL("Naming a new offer",P(v("archrule"),"The rule to follow"))),
- s10:()=>{const a=ARCH.find(x=>x[0]===v("archetype"));return slide("Personality","If the brand were a person",h("div",{class:"cols",style:"grid-template-columns:42% 1fr;align-items:center"},wheel(v("archetype")),h("div",{style:"display:grid;gap:1em"},BL("Our archetype",a?h("p",null,h("b",{text:a[0]}),": "+a[1]):h("p",{class:"ph",text:"The closest archetype"})),BL("We are",CH(L("traits"),"Three to five traits")),BL("We are not",CH(L("nots"),"What we refuse to be",1)))))},
- s11:()=>slide("Tone of voice","How we sound",h("div",{class:"cols"},BL("Our tone on four scales",scales(),P(v("address")?"We address people: "+v("address").toLowerCase()+".":"","")),h("div",{style:"display:grid;gap:1em"},BL("We say",UL(L("say"),"Real sentences")),BL("We never say",UL(L("dont"),"Sentences that are not us")))),h("div",{class:"cols"},BL("Words we like",P(v("use"),"Our vocabulary")),BL("Words we avoid",P(v("avoid"),"Not our vocabulary")))),
+ s10:()=>{const a=ARCH.find(x=>x[0]===v("archetype"));return slide("Personality","If the brand were a person","wide",h("div",{class:"cols",style:"grid-template-columns:44% 1fr;align-items:center;gap:2.4em"},wheel(v("archetype")),h("div",{style:"display:grid;gap:1.1em"},a?h("p",{class:"big"},h("b",{style:"color:var(--b1)",text:a[0]})," "+a[1]+"."):h("p",{class:"ph big",text:"Choose the archetype that drives the brand"}),BL("We are",CH(L("traits"),"Three to five traits")),BL("We are not",CH(L("nots"),"What we refuse to be",1)))))},
+ s11:()=>slide("Tone of voice","How we sound","wide",h("div",{class:"cols"},BL("Our tone on four scales",scales(),P(v("address")?"We address people: "+v("address").toLowerCase()+".":"","")),h("div",{style:"display:grid;gap:1em"},BL("We say",UL(L("say"),"Real sentences")),BL("We never say",UL(L("dont"),"Sentences that are not us")))),h("div",{class:"cols"},BL("Words we like",P(v("use"),"Our vocabulary")),BL("Words we avoid",P(v("avoid"),"Not our vocabulary")))),
  s12:()=>slide("Red lines","Where we draw the line",h("div",{class:"cols"},BL("We do not speak about",UL(L("red"),"Subjects we stay out of")),BL("When we are criticised",P(v("critic"),"How we answer")))),
  s13:()=>slide("Story","Our story",v("story")?h("p",{style:"font-size:1.28em;line-height:1.5",text:v("story")}):h("p",{class:"ph big",text:"Where you come from, what you saw, what you decided to do about it."})),
  s14:()=>slide("Words","The words people remember",h("p",{class:"big",style:"color:var(--b1)",text:v("tagline")||"Your tagline"}),h("div",{class:"cols"},BL("In one sentence",P(v("pitch1"),"The brand in one sentence")),BL("Hooks",UL(L("hooks"),"Short lines for posts and ads"))),BL("Key messages",KVL(KV("msgs"),"Audience: message"))),
  s14b:()=>slide("Words","The brand in one paragraph",h("p",{style:"font-size:1.35em;line-height:1.5",text:v("pitch2")})),
- s15:()=>slide("Visual rules","How we look",h("div",{class:"cols"},BL("Logo: always",UL(L("logodo"),"What to do")),BL("Logo: never",UL(L("logodont"),"What to avoid"))),h("div",{class:"cols c3"},BL("Colours",KVL(KV("roles"),"Colour: its role")),BL("Type",P(v("fonts"),"Typefaces and their use")),BL("Images",P(v("imagery"),"Style of photos")))),
- s16:()=>{const ch=KV("channels");return slide("Channels","Where we show up, and what we talk about",h("div",{class:"cols",style:"grid-template-columns:46% 1fr;align-items:center"},ch.length?hub(ch.slice(0,7).map(x=>x[0])):h("p",{class:"ph",text:"Your channels"}),BL("Each channel has one job",KVL(ch,"Channel: its role"))),BL("Content pillars",CH(L("pillars"),"Three to five themes")))},
- s22:()=>slide("Social media","How we post",h("div",{class:"cols",style:"grid-template-columns:40% 1fr;align-items:start"},h("div",{class:"post"},h("div",{class:"ph1"},h("div",{class:"av","aria-hidden":"true",style:"font-size:1em",text:NAME().charAt(0).toUpperCase()}),h("div",null,h("b",{text:NAME()}),h("small",{text:"Example post"}))),v("socex")?h("p",{style:"white-space:pre-line",text:v("socex")}):h("p",{class:"ph",text:"One example post, in your voice"}),h("div",{class:"pic",text:v("tagline")||L("pillars")[0]||"Your visual"}),h("div",{class:"ft"},h("span",{text:"Like"}),h("span",{text:"Comment"}),h("span",{text:"Share"}))),h("div",{style:"display:grid;gap:1em"},BL("Where, what and how often",KVL(KV("socnet"),"Network: content and rhythm")),BL("Style of our posts",P(v("socstyle"),"Length, emojis, hashtags, visuals")))),h("div",{class:"cols"},BL("Always",UL(L("socdo"),"What every post does")),BL("Never",UL(L("socdont"),"What we do not post")))),
+ s15:()=>slide("Visual rules","How we look","wide",h("div",{class:"cols"},BL("Logo: always",UL(L("logodo"),"What to do")),BL("Logo: never",UL(L("logodont"),"What to avoid"))),h("div",{class:"cols c3"},BL("Colours",KVL(KV("roles"),"Colour: its role")),BL("Type",P(v("fonts"),"Typefaces and their use")),BL("Images",P(v("imagery"),"Style of photos")))),
+ s16:()=>{const ch=KV("channels");return slide("Channels","Where we show up, and what we talk about","wide",h("div",{class:"cols",style:"grid-template-columns:46% 1fr;align-items:center"},ch.length?hub(ch.slice(0,7).map(x=>x[0])):h("p",{class:"ph",text:"Your channels"}),BL("Each channel has one job",KVL(ch,"Channel: its role"))),BL("Content pillars",CH(L("pillars"),"Three to five themes")))},
+ s22:()=>slide("Social media","How we post","wide",h("div",{class:"cols",style:"grid-template-columns:40% 1fr;align-items:start"},h("div",{class:"post"},h("div",{class:"ph1"},h("div",{class:"av","aria-hidden":"true",style:"font-size:1em",text:NAME().charAt(0).toUpperCase()}),h("div",null,h("b",{text:NAME()}),h("small",{text:"Example post"}))),v("socex")?h("p",{style:"white-space:pre-line",text:v("socex")}):h("p",{class:"ph",text:"One example post, in your voice"}),h("div",{class:"pic",text:v("tagline")||L("pillars")[0]||"Your visual"}),h("div",{class:"ft"},h("span",{text:"Like"}),h("span",{text:"Comment"}),h("span",{text:"Share"}))),h("div",{style:"display:grid;gap:1em"},BL("Where, what and how often",KVL(KV("socnet"),"Network: content and rhythm")),BL("Style of our posts",P(v("socstyle"),"Length, emojis, hashtags, visuals")))),h("div",{class:"cols"},BL("Always",UL(L("socdo"),"What every post does")),BL("Never",UL(L("socdont"),"What we do not post")))),
  s23:()=>slide("Blog","How we write an article",h("div",{class:"cols"},BL("Anatomy of an article",L("blogform").length?h("div",{class:"wire"},L("blogform").map((x,i)=>h("div",null,h("i",{text:String(i+1)}),h("span",{text:x})))):h("p",{class:"ph",text:"The parts of an article, in order"})),h("div",{style:"display:grid;gap:1em"},BL("Titles that sound like us",UL(L("blogtitles"),"Three example titles")),BL("Length and rhythm",P(v("bloglen"),"How long, how often")),BL("How it ends",P(v("blogcta"),"One next step")))),BL("What we write about",CH(L("blogtopics"),"Our topics"))),
- s24:()=>slide("Email","How our emails sound",h("div",{class:"cols",style:"grid-template-columns:46% 1fr;align-items:start"},h("div",{class:"mail"},h("div",{class:"mh"},h("span",null,h("b",{text:"From: "}),NAME()),h("span",null,h("b",{text:"Subject: "}),L("mailsubj")[1]||L("mailsubj")[0]||"Your subject line")),h("div",{class:"mb"},h("b",{text:v("mailhello")||"Your greeting,"}),v("mailex")?h("span",{text:v("mailex")}):h("span",{class:"ph",text:"A short example email"}),h("span",{text:v("mailbye")||"Your sign-off"}))),h("div",{style:"display:grid;gap:1em"},BL("Subject lines",UL(L("mailsubj"),"Your style and two examples")),BL("Rules",UL(L("mailrules"),"Length, one idea, one button"))))),
+ s24:()=>slide("Email","How our emails sound","wide",h("div",{class:"cols",style:"grid-template-columns:46% 1fr;align-items:start"},h("div",{class:"mail"},h("div",{class:"mh"},h("span",null,h("b",{text:"From: "}),NAME()),h("span",null,h("b",{text:"Subject: "}),L("mailsubj")[1]||L("mailsubj")[0]||"Your subject line")),h("div",{class:"mb"},h("b",{text:v("mailhello")||"Your greeting,"}),v("mailex")?h("span",{text:v("mailex")}):h("span",{class:"ph",text:"A short example email"}),h("span",{text:v("mailbye")||"Your sign-off"}))),h("div",{style:"display:grid;gap:1em"},BL("Subject lines",UL(L("mailsubj"),"Your style and two examples")),BL("Rules",UL(L("mailrules"),"Length, one idea, one button"))))),
  s17:()=>slide("Ready to use","Texts to copy",h("div",{class:"cols"},BL("About us",P(G.about())),h("div",{style:"display:grid;gap:1.3em"},BL("Social media bio",P(G.bio())),BL("Email signature",h("p",{style:"white-space:pre-line",text:G.sig()}))))),
  s18:()=>slide("Ambassadors","When you speak for the brand",BL("Introduce us like this",h("p",{class:"big",style:"font-size:1.35em",text:G.intro()})),h("div",{class:"cols"},BL("Always",UL(L("ado"),"What helps")),BL("Never",UL(L("adont"),"What harms")))),
  s19:()=>slide("AI assistants","Keeping our voice when we write with AI",h("div",{class:"cols"},BL("How to use it",UL(["Paste the voice card at the start of the conversation.","Give the assistant the facts: it must not invent them.","Reread everything before it goes out. We sign what we publish."])),BL("The card starts like this",h("p",{style:"white-space:pre-line;font-size:.86em",text:G.voice().split("\n").slice(0,7).join("\n")})))),
  s20:()=>slide("Governance","Who decides, and how fast",BL("Approvals",KVL(KV("approve"),"What: who approves, and how fast")),h("div",{class:"cols c3"},BL("Where the files are",P(v("files"),"Folder or link")),BL("Asking for an exception",P(v("except"),"How to ask")),BL("Review",P(v("review"),"When this playbook is updated")))),
  s21:()=>slide("Rollout","The next six months",h("div",{class:"tl","aria-hidden":"true"},[1,2,3,4,5,6].map(n=>h("span",{text:"Month "+n}))),BL("Objectives and how we measure them",KVL(KV("goals"),"Objective: measure")),BL("Places to update",CH(L("places"),"Website, social media, signatures...",1))),
- sum:()=>slide("Summary","The brand on one page",h("div",{class:"cols c3"},BL("We exist to",P(v("mission"),"Mission")),BL("We promise",P(v("promise"),"Promise")),BL("We talk to",P(v("aud"),"Audience"))),h("div",{class:"cols c3"},BL("We are",CH(L("traits").slice(0,4),"Traits")),BL("We sound like",P(L("say")[0]||"","A real sentence")),BL("We say",P(v("tagline"),"Tagline"))),BL("Our position",P(G.position())))
+ sum:()=>slide("Summary","The brand on one page","wide",h("div",{class:"cols c3"},BL("We exist to",P(v("mission"),"Mission")),BL("We promise",P(v("promise"),"Promise")),BL("We talk to",P(v("aud"),"Audience"))),h("div",{class:"cols c3"},BL("We are",CH(L("traits").slice(0,4),"Traits")),BL("We sound like",P(L("say")[0]||"","A real sentence")),BL("We say",P(v("tagline"),"Tagline"))),BL("Our position",P(G.position())))
 };
-function deck(){const out=[SL.cover()];let g=-1;visible().forEach(s=>{if(s.g!==g){g=s.g;out.push(SL.div(g+1,GROUPS[g]))}out.push(SL[s.id]());if(s.id==="s14"&&v("pitch2"))out.push(SL.s14b())});out.push(SL.sum());return out}
-function fit(root){root.querySelectorAll(".slide .in").forEach(e=>{e.style.fontSize="";let f=1.95,n=0;while(e.scrollHeight>e.clientHeight+1&&n++<14){f*=.94;e.style.fontSize=f+"cqw"}})}
+function deck(){SN="";const out=[SL.cover()];let g=-1,c=0;visible().forEach(s=>{if(s.g!==g){g=s.g;SN="";out.push(SL.div(g+1,GROUPS[g]))}SN=String(++c).padStart(2,"0");out.push(SL[s.id]());if(s.id==="s14"&&v("pitch2"))out.push(SL.s14b())});SN="";out.push(SL.sum());
+  out.forEach((e,i)=>{const pn=e.querySelector(".pn"),pg=e.querySelector(".pg");if(pn)pn.textContent=String(i+1).padStart(2,"0")+" / "+out.length;if(pg)pg.style.width=100*(i+1)/out.length+"%"});return out}
+function fit(root){root.querySelectorAll(".slide .in").forEach(e=>{e.style.fontSize="";let f=1.9,n=0;while(e.scrollHeight>e.clientHeight+1&&n++<14){f*=.94;e.style.fontSize=f+"cqw"}})}
 
 // ---------- UI ----------
 function field(f,s){
@@ -442,7 +476,7 @@ const box=(fn,label)=>{const pre=h("pre",{"data-live":"1"});pre._fn=fn;pre.textC
 let liveEls={};
 function live(){ // refresh what depends on the answers, without touching the fields
   document.querySelectorAll("pre[data-live]").forEach(p=>{const t=p._fn();if(p.textContent!==t)p.textContent=t});
-  if(liveEls.prev){liveEls.prev.innerHTML="";const s=STEPS.find(x=>x.id===cur);liveEls.prev.append(SL[s.id]());if(cur==="s1")liveEls.prev.append(SL.cover());fit(liveEls.prev)}
+  if(liveEls.prev){liveEls.prev.innerHTML="";const s=STEPS.find(x=>x.id===cur);SN=String(visible().indexOf(s)+1).padStart(2,"0");liveEls.prev.append(SL[s.id]());SN="";if(cur==="s1")liveEls.prev.append(SL.cover());fit(liveEls.prev)}
   if(liveEls.checks){const w=warns(STEPS.find(x=>x.id===cur));liveEls.checks.className="checks"+(w.length?"":" good");liveEls.checks.innerHTML="";liveEls.checks.append(h("b",{text:w.length?"Worth a second look":"Coherence check"}),w.length?h("ul",null,w.map(x=>h("li",{text:x}))):h("span",{text:"Nothing to flag on this step."}))}
   head()}
 function head(){const vs=visible(),done=vs.filter(s=>fill(s)>=.99).length;$("pill").textContent=done+" of "+vs.length+" steps complete";$("mt").style.width=100*vs.reduce((a,s)=>a+fill(s),0)/vs.length+"%";
