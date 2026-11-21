@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand Playbook Builder</title>
+<meta name="description" content="Build a brand playbook step by step: identity, audience, positioning, personality, tone of voice, story and rollout. The slides build themselves in your colours and export as a deck.">
+<meta property="og:title" content="Brand Playbook Builder">
+<meta property="og:description" content="Answer simple questions and get a brand playbook in your own colours, ready to present.">
+<style>
+:root{--bg:#EFE8D9;--card:#fff;--ink:#18223A;--mute:#5C6478;--line:#E2DAC8;--soft:#FBF8F2;--gold:#C9A45C;--gold-soft:#E3CC9A;--hero:#0D182D;--navy:#14233F;--ok:#1F8A63;--warn:#B8791A;--bad:#C8412B;--shadow:0 1px 2px rgba(20,35,63,.06),0 14px 34px -16px rgba(20,35,63,.3)}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1322;--card:#132038;--ink:#F5EFE3;--mute:#A3ABBD;--line:#24324F;--soft:#0F1A2E;--navy:#1B2C4D;--ok:#5FCFA0;--warn:#E8B45C;--bad:#F08A76;--shadow:0 12px 32px -12px rgba(0,0,0,.6)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:min(1640px,95vw);margin:0 auto;padding:0 20px}
+input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid rgba(201,164,92,.75);outline-offset:1px}
+.hero{color:#fff;background:radial-gradient(700px 380px at 92% -10%,rgba(201,164,92,.33),transparent 70%),radial-gradient(620px 360px at 0% 120%,rgba(43,92,158,.5),transparent 70%),var(--hero)}
+.hero .wrap{padding-top:24px}
+.top{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.eyebrow{font-size:.74rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--gold-soft)}
+h1{font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.1;letter-spacing:-.025em;margin:4px 0 6px;font-weight:800}
+h1 em{font-style:normal;color:var(--gold-soft)}
+.hero p{max-width:680px;margin:0;color:rgba(255,255,255,.78)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.sp{margin-left:auto}
+.hbtn{font-size:.85rem;font-weight:600;padding:7px 13px;border-radius:99px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.07);color:#fff;transition:.15s}
+.hbtn:hover{background:rgba(255,255,255,.18)}.hbtn.pri{background:var(--gold-soft);color:#14233F;border-color:var(--gold-soft)}
+.side{display:grid;gap:8px;justify-items:end}
+#saved{color:rgba(255,255,255,.62);font-size:.76rem}
+.status{display:flex;gap:14px;align-items:center;margin-top:16px;flex-wrap:wrap}
+.pill{font-weight:700;font-size:.86rem;padding:7px 14px;border-radius:99px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
+.meter{flex:1;min-width:200px;height:7px;border-radius:9px;background:rgba(255,255,255,.14);overflow:hidden}
+.meter i{display:block;height:100%;background:var(--gold-soft);transition:width .5s}
+.dseg{display:inline-flex;padding:3px;border-radius:99px;background:rgba(255,255,255,.12)}
+.dseg button{border:0;background:none;color:rgba(255,255,255,.8);font-weight:700;font-size:.82rem;padding:5px 13px;border-radius:99px}
+.dseg button[aria-pressed=true]{background:var(--gold-soft);color:#14233F}
+nav.tabs{display:flex;gap:4px;margin-top:16px}
+.tabb{font-weight:700;font-size:.93rem;padding:11px 18px;border:0;border-radius:12px 12px 0 0;background:rgba(255,255,255,.07);color:rgba(255,255,255,.78)}
+.tabb[aria-current=true]{background:var(--bg);color:var(--ink)}
+main.wrap{padding-top:30px;padding-bottom:14px}
+#ribbon{display:none}
+body.ex #ribbon{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;position:sticky;top:0;z-index:40;padding:9px 16px;font-size:.92rem;font-weight:600;color:#14233F;background:repeating-linear-gradient(135deg,#E3CC9A,#E3CC9A 14px,#D9BD82 14px,#D9BD82 28px)}
+#ribbon b{background:#14233F;color:#fff;padding:2px 10px;border-radius:99px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
+#ribbon button{border:1.5px solid #14233F;background:none;color:#14233F;font-weight:700;font-size:.82rem;padding:4px 12px;border-radius:99px}
+body.ex:after{content:"";position:fixed;inset:0;border:6px solid var(--gold);pointer-events:none;z-index:60}
+body.ex .hero{background:radial-gradient(700px 380px at 92% -10%,rgba(95,207,160,.3),transparent 70%),#0C3436}
+
+.build{display:grid;grid-template-columns:270px minmax(0,1fr) minmax(0,1.08fr);gap:26px;align-items:start}
+.steps{position:sticky;top:14px;display:grid;gap:4px;max-height:calc(100vh - 28px);overflow:auto;padding-right:4px}
+.grp{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:10px 4px 2px}
+.grp:first-child{margin-top:0}
+.st{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;text-align:left;padding:8px 10px;border-radius:11px;border:1.5px solid transparent;background:none;color:var(--ink);transition:.15s}
+.st:hover{background:var(--card)}
+.st[aria-current=true]{background:var(--card);border-color:var(--navy);box-shadow:var(--shadow)}
+.st i{width:24px;height:24px;border-radius:8px;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:.72rem;background:var(--line);color:var(--mute)}
+.st.part i{background:color-mix(in srgb,var(--gold) 45%,var(--card));color:var(--ink)}
+.st.full i{background:var(--ok);color:#fff}
+.st b{font-size:.9rem;font-weight:600}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:20px;display:grid;gap:14px}
+.panel h2{margin:0;font-size:1.4rem;letter-spacing:-.02em;font-weight:800}
+.lead{margin:0;color:var(--mute)}
+.fld{display:grid;gap:4px;min-width:0}
+.lab{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.hint{font-size:.82rem;color:var(--mute)}
+input[type=text],textarea,select{font:inherit;font-size:.95rem;padding:9px 11px;border:1.5px solid var(--line);border-radius:10px;background:var(--soft);color:var(--ink);width:100%;min-width:0}
+input[type=text]:hover,textarea:hover,select:hover{border-color:var(--gold)}
+textarea{resize:vertical;display:block}
+.g2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.colors{display:flex;gap:12px;flex-wrap:wrap}
+.colors label{display:grid;gap:4px;justify-items:start}
+input[type=color]{width:74px;height:44px;border:1.5px solid var(--line);border-radius:10px;background:var(--soft);padding:3px;cursor:pointer}
+.logo{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:12px;border:1.5px dashed var(--line);border-radius:12px;background:var(--soft)}
+.logo img{max-height:64px;max-width:180px;background:#fff;border-radius:8px;padding:6px}
+.btn{font-weight:600;font-size:.88rem;padding:8px 14px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);transition:.15s}
+.btn:hover{border-color:var(--gold);transform:translateY(-1px)}
+.btn.main{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn.gold{background:linear-gradient(135deg,#E3CC9A,#C9A45C);color:#14233F;border-color:transparent;font-weight:700}
+.checks{display:grid;gap:6px;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--warn) 10%,var(--card));border:1px solid color-mix(in srgb,var(--warn) 45%,var(--card));font-size:.9rem}
+.checks.good{background:color-mix(in srgb,var(--ok) 9%,var(--card));border-color:color-mix(in srgb,var(--ok) 45%,var(--card))}
+.checks b{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.checks ul{margin:0;padding-left:18px;display:grid;gap:3px}
+.box{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--soft)}
+.box header{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 8px 6px 12px;border-bottom:1px solid var(--line);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.box header button{font-size:.8rem;font-weight:700;text-transform:none;letter-spacing:0;padding:5px 11px;border-radius:99px;border:0;background:var(--navy);color:#fff}
+.box pre{margin:0;padding:12px;font:inherit;font-size:.9rem;white-space:pre-wrap;word-break:break-word;max-height:240px;overflow:auto}
+.prev{position:sticky;top:14px;display:grid;gap:10px}
+.prev small{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.welcome{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px;padding:18px 22px;border-radius:18px;color:#fff;background:linear-gradient(135deg,#14233F,#24406F);border-left:5px solid var(--gold);box-shadow:var(--shadow)}
+.welcome b{display:block;font-size:1.15rem}.welcome span{color:rgba(255,255,255,.78);font-size:.93rem}
+.band{border-radius:18px;padding:18px 22px;margin-bottom:16px;color:#fff;background:linear-gradient(135deg,#14233F,#24406F);border-left:5px solid var(--gold);box-shadow:var(--shadow)}
+.band h2{margin:0;font-size:1.45rem;font-weight:800}.band p{margin:4px 0 0;color:rgba(255,255,255,.78);max-width:820px}
+.share{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-bottom:18px}
+.sb{border:1.5px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:8px;align-content:start;background:var(--card);box-shadow:var(--shadow)}
+.sb b{font-size:1rem}.sb p{margin:0;color:var(--mute);font-size:.9rem}
+.deck{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(520px,1fr))}
+#toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:10px 18px;border-radius:99px;font-weight:700;font-size:.9rem;opacity:0;transition:.25s;z-index:70;pointer-events:none}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+footer{margin:34px 0 28px;text-align:center;color:var(--mute);font-size:.84rem}
+@media(max-width:1240px){.build{grid-template-columns:250px minmax(0,1fr)}.prev{grid-column:2;position:static}}
+@media(max-width:820px){.build{grid-template-columns:1fr}.prev{grid-column:1}.steps{position:static;max-height:none;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}.grp{grid-column:1/-1}.side{justify-items:start}.deck{grid-template-columns:1fr}}
+
+/* slides: everything in em, scaled by the slide width */
+.slide{--b1:#14233F;--b2:#C9A45C;--b3:#0E7C86;--on1:#fff;--hf:Georgia,serif;--bf:system-ui,"Segoe UI",sans-serif;aspect-ratio:16/9;container-type:inline-size;background:#fff;color:#1b1b1f;border-radius:14px;overflow:hidden;position:relative;box-shadow:var(--shadow);border:1px solid var(--line)}
+.slide .in{position:absolute;inset:0;font-size:1.95cqw;padding:3.9em 3.7em 2.2em 4.3em;display:flex;flex-direction:column;gap:1.05em;font-family:var(--bf);line-height:1.4}
+.slide .bar{position:absolute;left:0;top:0;bottom:0;width:.9em;font-size:1.5cqw;background:linear-gradient(var(--b1),var(--b2))}
+.slide .tp{position:absolute;top:1.7em;left:5.6em;right:4.8em;font-size:1.5cqw;display:flex;justify-content:space-between;align-items:center;gap:1em;font-family:var(--bf)}
+.slide .tp span{font-size:.78em;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--b1);opacity:.75}
+.slide .tp img{height:2.3em;max-width:9em;object-fit:contain}
+.slide .tp b{font-family:var(--hf);color:var(--b1);font-size:1.05em}
+.slide h3{font-family:var(--hf);font-size:2.25em;line-height:1.1;margin:0;color:var(--b1);letter-spacing:-.01em}
+.slide .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.3em;flex:1;min-height:0}
+.slide .c3{grid-template-columns:1fr 1fr 1fr}
+.slide .cols{flex:none}.slide .in>*{flex-shrink:0}.slide .blk{overflow:visible}
+.slide .blk{background:color-mix(in srgb,var(--b1) 6%,#fff);border-radius:.8em;padding:.95em 1.15em;overflow:hidden;display:flex;flex-direction:column;gap:.35em;border-top:.22em solid var(--b2)}
+.slide .blk h4{margin:0;font-size:.76em;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--b1) 75%,#000);font-family:var(--bf)}
+.slide p{margin:0}.slide ul{margin:0;padding-left:1.1em;display:grid;gap:.25em}
+.slide .chips{display:flex;flex-wrap:wrap;gap:.4em}
+.slide .chips span{padding:.3em .85em;border-radius:99em;background:var(--b1);color:var(--on1);font-weight:600;font-size:.95em}
+.slide .chips.alt span{background:none;border:.12em solid var(--b1);color:var(--b1)}
+.slide .big{font-family:var(--hf);font-size:1.75em;line-height:1.28;color:#1b1b1f}
+.slide .ph{opacity:.38;font-style:italic}
+.slide .sw{display:flex;gap:.8em}
+.slide .sw div{flex:1;border-radius:.7em;padding:2.4em .8em .7em;color:#fff;font-size:.82em;font-weight:700;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(0,0,0,.08)}
+.slide .kv{display:grid;gap:.5em}
+.slide .kv div{display:grid;grid-template-columns:34% 1fr;gap:1em;padding:.45em 0;border-bottom:1px solid color-mix(in srgb,var(--b1) 14%,#fff)}
+.slide .kv b{color:var(--b1)}
+.slide.cover{background:var(--b1);color:var(--on1)}
+.slide.cover .in{justify-content:center;padding-left:5em}
+.slide.cover p{font-size:1.15em;opacity:.9}
+.slide.cover h3{color:var(--on1);font-size:4em}
+.slide.cover .sub{font-size:1.3em;opacity:.85;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.slide.cover img{max-height:7em;max-width:20em;object-fit:contain;align-self:flex-start;background:#fff;border-radius:.8em;padding:.8em}
+.slide.cover .bar{background:var(--b2)}
+.slide.div{background:color-mix(in srgb,var(--b1) 92%,#000);color:var(--on1)}
+.slide.div .in{justify-content:center}.slide.div h3{color:var(--on1);font-size:3.2em}.slide.div .n{font-size:1.1em;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--b2)}
+@media print{
+  @page{size:13.333in 7.5in;margin:0}
+  body{background:#fff}
+  body>*:not(main){display:none!important}
+  main.wrap{max-width:none;padding:0;margin:0}
+  main>*:not(.deck){display:none!important}
+  .deck{display:block}
+  .slide{width:13.333in;height:7.5in;aspect-ratio:auto;border:0;border-radius:0;box-shadow:none;break-after:page;break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div id="ribbon"><b>Example</b><span>You are looking at a made-up brand. Explore it, then start your own playbook.</span><button type="button" id="ribX">Start my playbook</button></div>
+<header class="hero"><div class="wrap">
+  <div class="top">
+    <div>
+      <span class="eyebrow">Brand playbook builder</span>
+      <h1>Your brand, <em>written down once.</em></h1>
+      <p>Answer simple questions about your brand. The slides build themselves in your colours, the tool points out what does not hold together, and you leave with a playbook your whole team can use.</p>
+    </div>
+    <div class="side">
+      <div class="row"><button type="button" class="hbtn" id="exB">See an example</button><button type="button" class="hbtn" id="openF">Open a file</button><button type="button" class="hbtn pri" id="saveF">Save to a file</button><input type="file" id="file" accept=".json,application/json" hidden></div>
+      <small id="saved">Saved in this browser as you type</small>
+    </div>
+  </div>
+  <div class="status"><span class="pill" id="pill"></span><div class="meter"><i id="mt"></i></div>
+    <span class="dseg" role="group" aria-label="Depth of the playbook"><button type="button" id="dE">Essential playbook</button><button type="button" id="dF">Full playbook</button></span></div>
+  <nav class="tabs" aria-label="Sections"><button type="button" class="tabb" id="tB">Build</button><button type="button" class="tabb" id="tD">Playbook and export</button></nav>
+</div></header>
+<main class="wrap" id="main"></main>
+<div id="toast" role="status" aria-live="polite"></div>
+<footer><div class="wrap">Everything you type, including your logo, stays in your browser. Designed by W.R., a marketer, and built with an AI coding assistant.
+<p style="max-width:820px;margin:12px auto 0;padding:0 20px;font-size:.78rem;line-height:1.5;opacity:.85"><b>Disclaimer.</b> This tool was developed independently by one person, from personal professional experience. It is a free aid provided as is, for general information only, with no guarantee that it is complete, accurate, up to date or suited to your situation. It is not professional, legal or technical advice. You are solely responsible for how you use it and for the decisions you make with it, and the author accepts no liability for any loss or damage arising from its use. Product and company names are mentioned for reference only: this tool is not affiliated with or endorsed by any of them.</p></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const h=(tag,props,...kids)=>{const e=document.createElement(tag);for(const k in props||{}){const v=props[k];if(k.startsWith("aria-")&&v!=null){e.setAttribute(k,String(v));continue}if(v==null||v===false)continue;if(k==="class")e.className=v;else if(k==="text")e.textContent=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else e.setAttribute(k,v===true?"":v)}kids.flat(3).forEach(c=>c!=null&&c!==false&&e.appendChild(typeof c==="string"?document.createTextNode(c):c));return e};
+const store={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}};
+const stamp=()=>new Date().toISOString().slice(0,10);
+const slug=t=>String(t).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40);
+let toastT;const toast=t=>{const e=$("toast");e.textContent=t;e.classList.add("on");clearTimeout(toastT);toastT=setTimeout(()=>e.classList.remove("on"),2200)};
+const copy=(t,ok)=>(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast(ok||"Copied"),()=>toast("Copy failed: select the text and copy it"));
+
+// ---------- state ----------
+const BLANK=()=>({d:{c1:"#14233F",c2:"#C9A45C",c3:"#0E7C86",font:"serif"},logo:"",depth:"ess"});
+const EXAMPLE=()=>({example:true,depth:"full",logo:"",d:{c1:"#1F4B43",c2:"#D9A441",c3:"#B5532F",font:"serif",
+ name:"Atelier Nour",tagline:"Make something with your hands",what:"Weekend ceramic workshops for beginners, in small groups.",market:"Creative leisure, local, in person",stage:"Refresh of an existing brand",goal:"Give the team and our partners one reference for how the brand speaks and looks, before we open a second studio.",version:"Version 1",
+ seen:"Friendly\nA bit amateur\nHard to book",want:"Welcoming\nSkilled\nEffortless",gap:"People like us but do not yet see the craft. The booking experience lets the brand down.",
+ aud:"Adults in the city looking for a creative hobby",problem:"They spend their days on screens and want to make something real, but fear they are not creative enough.",seek:"A relaxed first experience, with a teacher who makes them feel capable.",objections:"I have never done this\nIt is probably expensive\nI do not have the time",persona:"Lina, 34",portrait:"Project manager, lives in a flat, has tried yoga and baking classes, books her weekends on her phone.",
+ rivals:"Big craft chains: fun in two hours, anyone can do it\nArt schools: serious training over several months\nOnline courses: learn at home at your own pace",space:"A real craft, taught seriously, in one unhurried weekend.",
+ mission:"Help people rediscover that they can make things with their hands.",vision:"A studio in every neighbourhood where making is as normal as going to the gym.",promise:"You leave with a piece you are proud of, and the wish to come back.",values:"Patience: we never rush a learner\nCraft: we teach real technique, not shortcuts\nWarmth: everyone is greeted by name",
+ pneed:"want a creative break from screens",pcat:"a ceramics studio",pben:"gives beginners a real first success in one weekend",palt:"two-hour craft parties",pdiff:"teach proper technique in groups of six",diffs:"Groups of six at most\nTaught by working ceramists\nEvery piece is fired and glazed for you",
+ proofs:"1,200 beginners taught since 2021\n4.9 out of 5 from 310 reviews\n6 out of 10 participants book a second workshop",
+ arch:"One brand for everything",archnames:"Atelier Nour Workshops\nAtelier Nour Team days\nAtelier Nour Gift cards",archrule:"Atelier Nour, then a plain descriptive word. No invented product names.",
+ archetype:"The Creator",traits:"Encouraging\nSkilled\nCalm\nDown to earth",nots:"Arty or elitist\nChildish\nSalesy",
+ address:"Informal, first names",say:"You will throw your first bowl by Sunday.\nNo experience needed, really.\nWe keep groups small so you get help.",dont:"Unleash your inner artist!\nLimited places, book now!!\nOur revolutionary method",use:"make, hands, first, together, craft",avoid:"masterpiece, talent, hack, crazy",
+ red:"We do not comment on politics or religion.\nWe never mock a beginner's work, even kindly.",critic:"Thank the person, say what we will check, answer within one working day, move the detail to a private message.",
+ story:"Nour learned ceramics from her grandmother and spent ten years behind a desk before coming back to clay. She opened the studio for people like her former self: capable adults who had stopped making things. Every workshop is built so that a complete beginner leaves with a piece they are proud of.",
+ hooks:"Your first bowl by Sunday\nTwo days, six people, one wheel each\nSwitch off your screen, switch on the wheel",pitch1:"Atelier Nour runs weekend ceramic workshops where complete beginners make a real piece in small groups.",pitch2:"Atelier Nour is a ceramics studio for adults who want a creative break. In one weekend, in groups of six, working ceramists teach you proper technique. You leave with a piece you made, fired and glazed, and the confidence to continue.",msgs:"Beginners: you do not need talent, you need a patient teacher\nCompanies: a team day where everyone makes something real\nGift buyers: a weekend they will remember, not another object",
+ logodo:"Keep clear space equal to the height of the letter N\nUse the dark green version on light backgrounds",logodont:"Do not stretch or rotate it\nDo not place it on a busy photo",roles:"Dark green: backgrounds and headings\nOchre: highlights and buttons\nTerracotta: small accents only",fonts:"Headings: a warm serif. Text: a simple sans serif.",imagery:"Hands at work, natural light, real participants, clay on fingers. No stock photos.",
+ channels:"Instagram: show the making and the people\nNewsletter: new dates first, one story a month\nGoogle Business Profile: reviews and practical information\nPartners: gift shops and companies nearby",pillars:"Behind the wheel\nFirst-timer stories\nTechnique in one minute\nLife of the studio",
+ about:"",bio:"",sig:"",intro:"",ado:"Say what people make, not what we sell\nUse first names\nShare a real photo from a workshop",adont:"Do not promise talent or art\nDo not post unfinished pieces without asking",
+ approve:"New visuals: studio manager, two working days\nSocial posts: no approval needed inside this playbook\nPartnerships: founder, one week",files:"Shared drive, Brand folder: logos, colours, photo library, templates",except:"Ask the studio manager in writing, with the reason and the date needed.",review:"Every January",
+ goals:"Be seen as skilled, not only friendly: share of reviews mentioning the teacher\nMake booking effortless: bookings completed on a phone\nGrow repeat visits: participants who book a second workshop",places:"Website and booking page\nSocial media bios and banners\nEmail signatures\nGift cards and printed leaflets\nGoogle Business Profile"}});
+const strs=o=>Object.fromEntries(Object.entries(o&&typeof o==="object"?o:{}).filter(([k,v])=>typeof v==="string"&&v.length<6000));
+const okLogo=s=>typeof s==="string"&&s.length<900000&&/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(s);
+function normalize(o){const b=BLANK();o=o&&typeof o==="object"?o:{};return{example:o.example===true,depth:o.depth==="full"?"full":"ess",logo:okLogo(o.logo)?o.logo:"",d:{...b.d,...strs(o.d)}}}
+let S=normalize(store.get("bp-state",null)||BLANK()),view="build",cur="s1";
+const save=()=>{if(!S.example&&!store.set("bp-state",S))$("saved").textContent="This browser is full: save to a file to keep your work."};
+const v=k=>(S.d[k]||"").trim(),L=k=>v(k).split(/\n/).map(x=>x.trim()).filter(Boolean),KV=k=>L(k).map(x=>{const i=x.indexOf(":");return i>0?[x.slice(0,i).trim(),x.slice(i+1).trim()]:[x,""]});
+const hex=k=>/^#[0-9a-f]{6}$/i.test(S.d[k]||"")?S.d[k]:BLANK().d[k];
+const lum=c=>{const n=parseInt(c.slice(1),16),f=x=>{x/=255;return x<=.03928?x/12.92:Math.pow((x+.055)/1.055,2.4)};return .2126*f(n>>16)+.7152*f(n>>8&255)+.0722*f(n&255)};
+const ratio=(a,b)=>{const x=lum(a),y=lum(b);return(Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+const FONTS={serif:["Serif, classic","Georgia,'Times New Roman',serif"],sans:["Sans serif, modern","'Segoe UI',system-ui,Arial,sans-serif"],round:["Rounded, friendly","'Trebuchet MS','Segoe UI',sans-serif"],mono:["Monospace, technical","'Courier New',monospace"]};
+const NAME=()=>v("name")||"Your brand";
+
+// ---------- generated texts ----------
+const G={
+ position:()=>"For "+(v("aud").toLowerCase()||"[audience]")+" who "+(v("pneed")||"[need]")+", "+NAME()+" is "+(v("pcat")||"[category]")+" that "+(v("pben")||"[benefit]")+". Unlike "+(v("palt")||"[the alternative]")+", we "+(v("pdiff")||"[what we do differently]")+".",
+ about:()=>v("about")||(v("pitch2")||[v("pitch1")||NAME()+": "+(v("what")||"[what we do]"),v("promise")].filter(Boolean).join(" ")),
+ bio:()=>v("bio")||[v("tagline"),v("what")].filter(Boolean).join(". ").slice(0,150)||"[tagline]. [what we do]",
+ sig:()=>v("sig")||"[First name Last name]\n[Role], "+NAME()+(v("tagline")?"\n"+v("tagline"):""),
+ intro:()=>v("intro")||v("pitch1")||NAME()+" "+(v("what")||"[what we do]"),
+ voice:()=>["You are writing for "+NAME()+". Follow this brand voice in everything you write for us.","",
+   "WHO WE ARE: "+(v("what")||"[what we do]")+(v("promise")?" Our promise: "+v("promise"):""),
+   "WHO WE TALK TO: "+(v("aud")||"[audience]")+(v("problem")?". Their problem: "+v("problem"):""),
+   "PERSONALITY: "+(L("traits").join(", ")||"[traits]")+(v("archetype")?" ("+v("archetype")+")":"")+".",L("nots").length?"WE ARE NEVER: "+L("nots").join(", ")+".":null,
+   v("address")?"HOW WE ADDRESS PEOPLE: "+v("address")+".":null,
+   L("say").length?"WE SOUND LIKE THIS:\n"+L("say").map(x=>"- "+x).join("\n"):null,L("dont").length?"WE NEVER SOUND LIKE THIS:\n"+L("dont").map(x=>"- "+x).join("\n"):null,
+   v("use")?"WORDS WE LIKE: "+v("use"):null,v("avoid")?"WORDS WE AVOID: "+v("avoid"):null,
+   v("tagline")?"TAGLINE: "+v("tagline"):null,L("msgs").length?"KEY MESSAGES:\n"+L("msgs").map(x=>"- "+x).join("\n"):null,L("red").length?"WE DO NOT SPEAK ABOUT:\n"+L("red").map(x=>"- "+x).join("\n"):null,"",
+   "Rules: write in this voice, use only facts I give you, mark anything you are unsure about with [CHECK], and tell me if a request goes against these rules."].filter(x=>x!==null).join("\n")
+};
+const ctx=()=>"Brand: "+NAME()+". What we do: "+(v("what")||"[to complete]")+" Audience: "+(v("aud")||"[to complete]")+".";
+const ARCH=[["The Creator","makes things, values craft and imagination"],["The Caregiver","protects and looks after people"],["The Sage","shares knowledge and helps people understand"],["The Explorer","opens new paths, values freedom"],["The Hero","helps people overcome a challenge"],["The Everyman","down to earth, belongs with ordinary people"],["The Jester","brings lightness and humour"],["The Lover","creates closeness, pleasure and beauty"],["The Magician","makes transformations happen"],["The Ruler","brings order, quality and control"],["The Innocent","simple, honest, optimistic"],["The Rebel","breaks the rules that hold people back"]];
+
+// ---------- steps ----------
+const F=(k,label,o)=>({k,label,...(o||{})});
+const STEPS=[
+ {id:"s1",g:0,ess:1,t:"Logo and visual identity",lead:"Start with what already exists. The whole playbook takes these colours.",f:[F("name","Brand name",{ph:"Atelier Nour",max:60}),{k:"logo",type:"logo"},{k:"colors",type:"colors"},F("font","Style of your headings",{options:Object.entries(FONTS).map(([k,x])=>[k,x[0]])}),F("tagline","Current tagline, if you have one",{ph:"Make something with your hands",max:90})],
+  checks:()=>[!v("name")&&"The brand has no name yet.",ratio(hex("c1"),"#ffffff")<3&&"Your main colour is too light to carry white text. Use it for accents and pick a darker one as main colour.",ratio(hex("c1"),hex("c2"))<1.5&&"Main and second colours are almost the same: they will not stand apart."]},
+ {id:"s2",g:0,ess:1,t:"Context and objective",lead:"Why this playbook exists, in a few lines. It keeps every later choice honest.",f:[F("what","What you do, in one sentence",{rows:2,ph:"Weekend ceramic workshops for beginners, in small groups."}),F("market","Market or sector",{ph:"Creative leisure, local"}),F("stage","Where the brand stands",{options:["","New brand","Refresh of an existing brand","Full rebrand","Brand for a new product"].map(x=>[x,x||"Choose"])}),F("goal","What this playbook must make possible",{rows:2,ph:"One reference for how we speak and look, before we open a second studio."}),F("version","Version or date",{ph:"Version 1"})],
+  checks:()=>[v("what").split(/\s+/).length>30&&"\"What you do\" runs over 30 words. If it cannot be said shortly, the brand is not clear yet."]},
+ {id:"s3",g:0,t:"Starting point: seen and wanted",lead:"Three words people use about you today, and three you would like to hear. The gap is the job.",f:[F("seen","How people describe you today, one word per line",{rows:3,ph:"Friendly\nA bit amateur\nHard to book"}),F("want","How you want to be described, one per line",{rows:3,ph:"Welcoming\nSkilled\nEffortless"}),F("gap","What has to change to close the gap",{rows:2})],
+  checks:()=>[L("seen").some(x=>L("want").map(y=>y.toLowerCase()).includes(x.toLowerCase()))&&"A word appears on both sides: on that point there is nothing to change.",L("seen").length&&!L("want").length&&"You described today but not the goal."],
+  prompt:()=>"I am working on the brand of a company. "+ctx()+"\nPeople describe us today as: "+(L("seen").join(", ")||"[words]")+". We want to be described as: "+(L("want").join(", ")||"[words]")+".\nList the five most concrete changes that would move perception from the first list to the second, starting with what customers experience directly."},
+ {id:"s4",g:1,ess:1,t:"Audience and persona",lead:"One priority audience. A brand that speaks to everyone is heard by no one.",f:[F("aud","Priority audience",{ph:"Adults in the city looking for a creative hobby"}),F("problem","Their problem, in their words",{rows:2}),F("seek","What they are looking for",{rows:2}),F("objections","What holds them back, one per line",{rows:3}),F("persona","Give them a name and an age",{ph:"Lina, 34"}),F("portrait","Their portrait in one sentence",{rows:2})],
+  checks:()=>[v("aud")&&/everyone|everybody|all /i.test(v("aud"))&&"\"Everyone\" is not an audience. Choose the group you would regret losing most.",v("aud")&&!L("objections").length&&"No objection listed. Knowing why people hesitate is what makes messages work."],
+  prompt:()=>"Help me write a persona. "+ctx()+"\nWrite a short portrait of one typical person in this audience: first name and age, daily life, what they want, what worries them about buying from us, and three objections in their own words. Mark with [CHECK] anything I should verify with real customers."},
+ {id:"s5",g:1,t:"Competitors and alternatives",lead:"What else could your audience choose, including doing nothing? Then name the space you take.",f:[F("rivals","One per line, as Name: what they claim",{rows:4,ph:"Big craft chains: fun in two hours\nArt schools: serious training over months"}),F("space","The space left free, that you take",{rows:2})],
+  checks:()=>[L("rivals").length>0&&!v("space")&&"You listed the alternatives but not the space you take."]},
+ {id:"s6",g:2,ess:1,t:"Mission, vision, promise, values",lead:"The few sentences everything else is measured against.",f:[F("mission","Mission: why you exist",{rows:2}),F("vision","Vision: the world you want to see",{rows:2}),F("promise","Promise: what a customer can count on",{rows:2}),F("values","Values, one per line, as Value: what it looks like in practice",{rows:4,ph:"Patience: we never rush a learner"})],
+  checks:()=>[KV("values").some(x=>!x[1])&&"A value has no behaviour next to it. A value nobody can act on is decoration.",L("values").length>5&&"More than five values: nobody will remember them.",v("promise")&&!L("proofs").length&&S.depth==="full"&&"You make a promise but list no proof yet (step \"Proof\")."],
+  prompt:()=>"Help me write brand foundations. "+ctx()+"\nPropose a mission (why we exist, one sentence), a vision (the world we want, one sentence), a promise (what a customer can count on, one sentence) and four values, each with one concrete behaviour. Plain words, no jargon, no superlatives."},
+ {id:"s7",g:2,ess:1,t:"Positioning",lead:"Fill the blanks. The sentence writes itself, and shows at once what is missing.",f:[F("pneed","...who (their need)",{ph:"want a creative break from screens"}),F("pcat","...is (your category)",{ph:"a ceramics studio"}),F("pben","...that (the main benefit)",{ph:"gives beginners a real first success in one weekend"}),F("palt","Unlike (the main alternative)",{ph:"two-hour craft parties"}),F("pdiff","...we (what you do differently)",{ph:"teach proper technique in groups of six"}),F("diffs","Your differences, one per line",{rows:3})],
+  out:[["position","Your positioning statement"]],
+  checks:()=>[!v("pdiff")&&v("pcat")&&"The sentence names no difference. Without one, you are a category, not a brand.",!v("aud")&&"The audience comes from the step \"Audience and persona\": fill it first.",L("diffs").length>4&&"More than four differences: keep the ones a customer would notice."]},
+ {id:"s8",g:2,t:"Proof",lead:"Numbers, testimonials, references, awards. Every claim in this playbook should rest on one of these.",f:[F("proofs","One proof per line",{rows:5,ph:"1,200 beginners taught since 2021\n4.9 out of 5 from 310 reviews"})],
+  checks:()=>[L("proofs").length>0&&!L("proofs").some(x=>/\d/.test(x))&&"No proof contains a number. Add at least one figure with its date."]},
+ {id:"s9",g:2,t:"Brand architecture",lead:"How your names relate to each other, so that new offers do not dilute the brand.",f:[F("arch","Your model",{options:["","One brand for everything","A main brand with sub-brands","Separate brands for each product"].map(x=>[x,x||"Choose"])}),F("archnames","Your offers or product names, one per line",{rows:3}),F("archrule","The rule for naming a new offer",{rows:2})],checks:()=>[]},
+ {id:"s10",g:3,ess:1,t:"Personality",lead:"If the brand were a person in the room, how would they behave?",f:[F("archetype","The closest archetype",{options:[["","Choose"],...ARCH.map(a=>[a[0],a[0]+": "+a[1]])]}),F("traits","We are, one trait per line",{rows:4,ph:"Encouraging\nSkilled\nCalm"}),F("nots","We are not, one per line",{rows:3,ph:"Elitist\nSalesy"})],
+  checks:()=>[L("traits").length>5&&"More than five traits blur the picture. Keep three to five.",L("traits").length>0&&!L("nots").length&&"Say what you are not: it is often what makes the personality clear."]},
+ {id:"s11",g:3,ess:1,t:"Tone of voice",lead:"Real sentences beat adjectives. Show how you sound, and how you never sound.",f:[F("address","How you address people",{options:["","Informal, first names","Formal and respectful","Neutral, no direct address"].map(x=>[x,x||"Choose"])}),F("say","We say, one real sentence per line",{rows:3}),F("dont","We never say, one per line",{rows:3}),F("use","Words we like",{ph:"make, hands, first, together"}),F("avoid","Words we avoid",{ph:"masterpiece, hack, crazy"})],
+  checks:()=>[L("say").length>0&&!L("dont").length&&"Add what you never say. The contrast is what teaches the tone.",L("say").some(x=>x.split(/\s+/).length<3)&&"Write full sentences in \"We say\", not single words.",v("use")&&v("avoid")&&v("use").toLowerCase().split(/[,\s]+/).some(w=>w&&v("avoid").toLowerCase().split(/[,\s]+/).includes(w))&&"A word is in both lists."],
+  prompt:()=>"Help me define a tone of voice. "+ctx()+" Personality: "+(L("traits").join(", ")||"[traits]")+". We are not: "+(L("nots").join(", ")||"[to complete]")+".\nWrite six pairs of sentences on everyday topics (welcome message, price, delay, thank you, error, reminder): first how we would say it, then how we would never say it. Then list ten words we would use and ten we would avoid."},
+ {id:"s12",g:3,t:"Red lines and difficult moments",lead:"What the brand does not speak about, and how it answers when criticised.",f:[F("red","Subjects we do not speak on, one per line",{rows:3}),F("critic","How we answer a criticism or a bad review",{rows:3})],checks:()=>[]},
+ {id:"s13",g:3,ess:1,t:"Brand story",lead:"Where you come from, what you saw, what you decided to do about it. Five sentences are enough.",f:[F("story","Your story",{rows:6})],
+  checks:()=>[v("story").split(/\s+/).length>130&&"The story runs over 130 words. People will retell the short version: write that one.",v("story")&&!/\b(we|i|she|he|they|our)\b/i.test(v("story"))&&"The story has no people in it. A story needs someone."],
+  prompt:()=>"Help me write a brand story. "+ctx()+(v("mission")?" Mission: "+v("mission"):"")+"\nAsk me five questions, one at a time, to find the facts of our story: who started it, what they noticed, the moment they decided, the first difficulty, what has changed for customers. Then write the story in five sentences, using only my answers."},
+ {id:"s14",g:3,ess:1,t:"Tagline, hooks and key messages",lead:"The words people will actually read and repeat.",f:[F("tagline","Tagline",{ph:"Make something with your hands",max:90}),F("hooks","Hooks, one per line",{rows:3}),F("pitch1","The brand in one sentence",{rows:2}),F("pitch2","The brand in one paragraph",{rows:4}),F("msgs","Key messages, one per line, as Audience: message",{rows:3})],
+  checks:()=>[v("tagline").split(/\s+/).length>8&&"The tagline is over eight words. Shorter ones are remembered.",v("pitch1").split(/\s+/).length>30&&"The one-sentence pitch is over 30 words.",v("pitch1")&&v("name")&&!v("pitch1").toLowerCase().includes(v("name").toLowerCase())&&"The one-sentence pitch does not name the brand."],
+  prompt:()=>"Help me find a tagline and hooks. "+ctx()+" Positioning: "+G.position()+" Personality: "+(L("traits").join(", ")||"[traits]")+".\nPropose ten taglines of at most six words, in three styles: a benefit, an invitation, a statement. Then five hooks for social media posts. No puns that depend on spelling, no exclamation marks."},
+ {id:"s15",g:4,t:"Visual rules",lead:"A few rules that stop the identity from drifting. Your designer's charter stays the reference.",f:[F("logodo","Logo: always, one per line",{rows:2}),F("logodont","Logo: never, one per line",{rows:2}),F("roles","Role of each colour, one per line",{rows:3,ph:"Dark green: backgrounds and headings"}),F("fonts","Typefaces and where each is used",{rows:2}),F("imagery","Style of photos and illustrations",{rows:2})],checks:()=>[]},
+ {id:"s16",g:4,ess:1,t:"Channels and content pillars",lead:"Where the brand shows up, and what it talks about. Each channel has one job.",f:[F("channels","One per line, as Channel: its role",{rows:4,ph:"Instagram: show the making and the people"}),F("pillars","Content pillars, one per line",{rows:4,ph:"Behind the scenes\nCustomer stories"})],
+  checks:()=>[KV("channels").some(x=>!x[1])&&"A channel has no role. If you cannot say what it is for, you may not need it.",L("channels").length>5&&"More than five channels is a lot to keep alive. Which ones really reach your audience?",L("pillars").length>5&&"Keep three to five pillars."]},
+ {id:"s17",g:4,t:"Ready-to-use texts",lead:"The texts your team copies every week. Leave a field empty to use the suggestion built from your answers.",f:[F("about","About text, for the website and directories",{rows:3,gen:"about"}),F("bio","Social media bio",{rows:2,gen:"bio"}),F("sig","Email signature",{rows:3,gen:"sig"})],out:[["about","About text"],["bio","Social media bio"],["sig","Email signature"]],
+  checks:()=>[G.bio().length>160&&"The bio is over 160 characters: most networks will cut it."]},
+ {id:"s18",g:4,t:"Ambassador kit",lead:"For employees, partners and anyone who speaks for the brand.",f:[F("intro","How to introduce the brand in one sentence",{rows:2,gen:"intro"}),F("ado","Always, one per line",{rows:3}),F("adont","Never, one per line",{rows:3})],out:[["intro","Introduction sentence"]],checks:()=>[]},
+ {id:"s19",g:4,t:"Voice card for AI assistants",lead:"Paste this at the start of a conversation with ChatGPT, Claude, Gemini or Copilot. Everything it writes for you then stays in your voice.",f:[],out:[["voice","Your brand voice card"]],
+  checks:()=>[!L("traits").length&&"The card is thin: fill in \"Personality\" first.",!L("say").length&&"Add real sentences in \"Tone of voice\": an assistant learns best from examples."]},
+ {id:"s20",g:4,t:"Governance",lead:"A brand drifts when nobody knows who decides. Slow approvals do as much harm as no rules.",f:[F("approve","One per line, as What: who approves, and how fast",{rows:3,ph:"New visuals: studio manager, two working days"}),F("files","Where the brand files are kept",{rows:2}),F("except","How to ask for an exception",{rows:2}),F("review","When this playbook is reviewed",{ph:"Every January"})],
+  checks:()=>[L("approve").length>0&&!L("approve").some(x=>/\d|day|week|hour/i.test(x))&&"No approval has a time limit. Without one, approvals are what slows everything down."]},
+ {id:"s21",g:4,ess:1,t:"Rollout: the next six months",lead:"What changes, how you will know it worked, and every place the brand must be updated.",f:[F("goals","One per line, as Objective: how you measure it",{rows:3}),F("places","Places to update, one per line",{rows:5,ph:"Website\nSocial media bios\nEmail signatures"})],
+  checks:()=>[KV("goals").some(x=>!x[1])&&"An objective has no measure next to it.",L("goals").length>4&&"More than four objectives for six months: choose."]}
+];
+const GROUPS=["What exists","Who we talk to","Who we are","How we speak","How we apply it"];
+const visible=()=>STEPS.filter(s=>S.depth==="full"||s.ess);
+const fill=s=>{const ks=s.f.filter(f=>f.k!=="colors"&&f.k!=="logo"&&f.k!=="font").map(f=>f.k);if(!ks.length)return L("traits").length&&L("say").length?1:0;const n=ks.filter(k=>{const g=s.f.find(f=>f.k===k).gen;return v(k)||(g&&!/\[/.test(G[g]()))}).length;return n/ks.length};
+const warns=s=>(s.checks?s.checks():[]).filter(Boolean);
+
+// ---------- slides ----------
+const P=(t,ph)=>t?h("p",{text:t}):h("p",{class:"ph",text:ph});
+const UL=(a,ph)=>a.length?h("ul",null,a.map(x=>h("li",{text:x}))):h("p",{class:"ph",text:ph});
+const BL=(t,...k)=>h("div",{class:"blk"},h("h4",{text:t}),k);
+const CH=(a,ph,alt)=>a.length?h("div",{class:"chips"+(alt?" alt":"")},a.map(x=>h("span",{text:x}))):h("p",{class:"ph",text:ph});
+const KVL=(a,ph)=>a.length?h("div",{class:"kv"},a.map(([x,y])=>h("div",null,h("b",{text:x}),h("span",{text:y})))):h("p",{class:"ph",text:ph});
+function slide(label,title,...body){const e=h("div",{class:"slide"},h("div",{class:"bar"}),h("div",{class:"tp"},h("span",{text:label}),S.logo?h("img",{src:S.logo,alt:""}):h("b",{text:NAME()})),h("div",{class:"in"},h("h3",{text:title}),body));return theme(e)}
+function theme(e){const c1=hex("c1");e.style.setProperty("--b1",c1);e.style.setProperty("--b2",hex("c2"));e.style.setProperty("--b3",hex("c3"));e.style.setProperty("--on1",ratio(c1,"#ffffff")>=3?"#fff":"#16181d");e.style.setProperty("--hf",(FONTS[S.d.font]||FONTS.serif)[1]);return e}
+const SL={
+ cover:()=>theme(h("div",{class:"slide cover"},h("div",{class:"bar"}),h("div",{class:"in"},S.logo?h("img",{src:S.logo,alt:""}):null,h("div",{class:"sub",text:"Brand playbook"}),h("h3",{text:NAME()}),h("p",{text:[v("tagline"),v("version")||stamp()].filter(Boolean).join("  ·  ")})))),
+ div:(n,t)=>theme(h("div",{class:"slide div"},h("div",{class:"in"},h("div",{class:"n",text:"Part "+n}),h("h3",{text:t})))),
+ s1:()=>slide("Identity","Our identity at a glance",h("div",{class:"cols"},BL("Logo and tagline",S.logo?h("img",{src:S.logo,alt:"",style:"max-height:6em;max-width:14em;object-fit:contain;align-self:flex-start"}):h("p",{class:"big",text:NAME()}),P(v("tagline"),"Your tagline")),BL("Colours and type",h("div",{class:"sw"},["c1","c2","c3"].map((k,i)=>h("div",{style:"background:"+hex(k)+";color:"+(ratio(hex(k),"#ffffff")>=3?"#fff":"#16181d")},["Main","Second","Accent"][i],h("span",{text:hex(k).toUpperCase()})))),h("p",{style:"font-family:var(--hf);font-size:1.5em;color:var(--b1)",text:"Headings look like this"}),h("p",{text:"And body text looks like this."})))),
+ s2:()=>slide("Context","Why this playbook",h("div",{class:"cols"},BL("What we do",P(v("what"),"What you do, in one sentence")),BL("Where we stand",P([v("market"),v("stage")].filter(Boolean).join(". "),"Market and stage of the brand"))),BL("What this playbook must make possible",P(v("goal"),"The objective of the playbook"))),
+ s3:()=>slide("Starting point","From how we are seen to how we want to be seen",h("div",{class:"cols"},BL("Today, people say",CH(L("seen"),"Three words",1)),BL("Tomorrow, we want to hear",CH(L("want"),"Three words"))),BL("What has to change",P(v("gap"),"The gap to close"))),
+ s4:()=>slide("Audience","Who we talk to",h("div",{class:"cols"},BL(v("persona")||"Our persona",P(v("aud"),"Priority audience"),P(v("portrait"),"Their portrait in one sentence")),BL("Their problem",P(v("problem"),"In their own words"))),h("div",{class:"cols"},BL("What they look for",P(v("seek"),"What they hope to find")),BL("What holds them back",UL(L("objections"),"Their objections")))),
+ s5:()=>slide("Landscape","The alternatives, and our space",BL("What else they could choose",KVL(KV("rivals"),"Name: what they claim")),BL("The space we take",P(v("space"),"What is left free for us"))),
+ s6:()=>slide("Foundations","What we stand for",h("div",{class:"cols c3"},BL("Mission",P(v("mission"),"Why we exist")),BL("Vision",P(v("vision"),"The world we want")),BL("Promise",P(v("promise"),"What customers can count on"))),BL("Values",KVL(KV("values"),"Value: what it looks like in practice"))),
+ s7:()=>slide("Positioning","Our place in people's minds",h("p",{class:"big",text:G.position()}),BL("What makes us different",UL(L("diffs"),"Your differences"))),
+ s8:()=>slide("Proof","Why people can believe us",BL("Our proof",UL(L("proofs"),"Numbers, testimonials, references"))),
+ s9:()=>slide("Architecture","How our names fit together",h("div",{class:"cols"},BL("Our model",P(v("arch"),"One brand, sub-brands or separate brands")),BL("Our names",UL(L("archnames"),"Offers and products"))),BL("Naming a new offer",P(v("archrule"),"The rule to follow"))),
+ s10:()=>{const a=ARCH.find(x=>x[0]===v("archetype"));return slide("Personality","If the brand were a person",BL("Our archetype",a?h("p",null,h("b",{text:a[0]}),": "+a[1]):h("p",{class:"ph",text:"The closest archetype"})),h("div",{class:"cols"},BL("We are",CH(L("traits"),"Three to five traits")),BL("We are not",CH(L("nots"),"What we refuse to be",1))))},
+ s11:()=>slide("Tone of voice","How we sound",h("div",{class:"cols"},BL("We say",UL(L("say"),"Real sentences")),BL("We never say",UL(L("dont"),"Sentences that are not us"))),h("div",{class:"cols c3"},BL("We address people",P(v("address"),"Formal or informal")),BL("Words we like",P(v("use"),"Our vocabulary")),BL("Words we avoid",P(v("avoid"),"Not our vocabulary")))),
+ s12:()=>slide("Red lines","Where we draw the line",h("div",{class:"cols"},BL("We do not speak about",UL(L("red"),"Subjects we stay out of")),BL("When we are criticised",P(v("critic"),"How we answer")))),
+ s13:()=>slide("Story","Our story",v("story")?h("p",{style:"font-size:1.28em;line-height:1.5",text:v("story")}):h("p",{class:"ph big",text:"Where you come from, what you saw, what you decided to do about it."})),
+ s14:()=>slide("Words","The words people remember",h("p",{class:"big",style:"color:var(--b1)",text:v("tagline")||"Your tagline"}),h("div",{class:"cols"},BL("In one sentence",P(v("pitch1"),"The brand in one sentence")),BL("Hooks",UL(L("hooks"),"Short lines for posts and ads"))),BL("Key messages",KVL(KV("msgs"),"Audience: message"))),
+ s14b:()=>slide("Words","The brand in one paragraph",h("p",{style:"font-size:1.35em;line-height:1.5",text:v("pitch2")})),
+ s15:()=>slide("Visual rules","How we look",h("div",{class:"cols"},BL("Logo: always",UL(L("logodo"),"What to do")),BL("Logo: never",UL(L("logodont"),"What to avoid"))),h("div",{class:"cols c3"},BL("Colours",KVL(KV("roles"),"Colour: its role")),BL("Type",P(v("fonts"),"Typefaces and their use")),BL("Images",P(v("imagery"),"Style of photos")))),
+ s16:()=>slide("Channels","Where we show up, and what we talk about",BL("Each channel has one job",KVL(KV("channels"),"Channel: its role")),BL("Content pillars",CH(L("pillars"),"Three to five themes"))),
+ s17:()=>slide("Ready to use","Texts to copy",h("div",{class:"cols"},BL("About us",P(G.about())),h("div",{style:"display:grid;gap:1.3em"},BL("Social media bio",P(G.bio())),BL("Email signature",h("p",{style:"white-space:pre-line",text:G.sig()}))))),
+ s18:()=>slide("Ambassadors","When you speak for the brand",BL("Introduce us like this",h("p",{class:"big",style:"font-size:1.35em",text:G.intro()})),h("div",{class:"cols"},BL("Always",UL(L("ado"),"What helps")),BL("Never",UL(L("adont"),"What harms")))),
+ s19:()=>slide("AI assistants","Keeping our voice when we write with AI",h("div",{class:"cols"},BL("How to use it",UL(["Paste the voice card at the start of the conversation.","Give the assistant the facts: it must not invent them.","Reread everything before it goes out. We sign what we publish."])),BL("The card starts like this",h("p",{style:"white-space:pre-line;font-size:.86em",text:G.voice().split("\n").slice(0,7).join("\n")})))),
+ s20:()=>slide("Governance","Who decides, and how fast",BL("Approvals",KVL(KV("approve"),"What: who approves, and how fast")),h("div",{class:"cols c3"},BL("Where the files are",P(v("files"),"Folder or link")),BL("Asking for an exception",P(v("except"),"How to ask")),BL("Review",P(v("review"),"When this playbook is updated")))),
+ s21:()=>slide("Rollout","The next six months",BL("Objectives and how we measure them",KVL(KV("goals"),"Objective: measure")),BL("Places to update",CH(L("places"),"Website, social media, signatures...",1))),
+ sum:()=>slide("Summary","The brand on one page",h("div",{class:"cols c3"},BL("We exist to",P(v("mission"),"Mission")),BL("We promise",P(v("promise"),"Promise")),BL("We talk to",P(v("aud"),"Audience"))),h("div",{class:"cols c3"},BL("We are",CH(L("traits").slice(0,4),"Traits")),BL("We sound like",P(L("say")[0]||"","A real sentence")),BL("We say",P(v("tagline"),"Tagline"))),BL("Our position",P(G.position())))
+};
+function deck(){const out=[SL.cover()];let g=-1;visible().forEach(s=>{if(s.g!==g){g=s.g;out.push(SL.div(g+1,GROUPS[g]))}out.push(SL[s.id]());if(s.id==="s14"&&v("pitch2"))out.push(SL.s14b())});out.push(SL.sum());return out}
+function fit(root){root.querySelectorAll(".slide .in").forEach(e=>{e.style.fontSize="";let f=1.95,n=0;while(e.scrollHeight>e.clientHeight+1&&n++<14){f*=.94;e.style.fontSize=f+"cqw"}})}
+
+// ---------- UI ----------
+function field(f,s){
+  if(f.type==="logo"){const img=S.logo?h("img",{src:S.logo,alt:"Your logo"}):h("span",{class:"hint",text:"No logo yet. A PNG with a transparent background works best."});
+    const inp=h("input",{type:"file",accept:"image/png,image/jpeg,image/webp,image/svg+xml",hidden:true});
+    inp.addEventListener("change",()=>{const file=inp.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,560/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.max(1,Math.round(im.width*k));c.height=Math.max(1,Math.round(im.height*k));c.getContext("2d").drawImage(im,0,0,c.width,c.height);const u=c.toDataURL("image/png");if(!okLogo(u)){toast("This image is too heavy");return}S.logo=u;save();render();toast("Logo added")};im.onerror=()=>toast("This file is not an image the browser can read");im.src=r.result};r.readAsDataURL(file)});
+    return h("div",{class:"fld"},h("span",{class:"lab",text:"Logo"}),h("div",{class:"logo"},img,inp,h("button",{type:"button",class:"btn",text:S.logo?"Replace the logo":"Add your logo",onclick:()=>inp.click()}),S.logo?h("button",{type:"button",class:"btn",text:"Remove",onclick:()=>{S.logo="";save();render()}}):null))}
+  if(f.type==="colors")return h("div",{class:"fld"},h("span",{class:"lab",text:"Brand colours"}),h("div",{class:"colors"},[["c1","Main"],["c2","Second"],["c3","Accent"]].map(([k,l])=>{const i=h("input",{type:"color","aria-label":l+" colour"});i.value=hex(k);const t=h("span",{class:"hint",text:hex(k).toUpperCase()});i.addEventListener("input",()=>{S.d[k]=i.value;t.textContent=i.value.toUpperCase();save();live()});return h("label",null,h("span",{class:"hint",text:l}),i,t)})),h("span",{class:"hint",text:"Pick the colours from your charter. The slides use them as you choose."}));
+  let el;if(f.options){el=h("select",null,f.options.map(o=>h("option",{value:o[0],text:o[1]})));el.value=S.d[f.k]||f.options[0][0];el.addEventListener("change",()=>{S.d[f.k]=el.value;save();live()})}
+  else{el=h(f.rows?"textarea":"input",{placeholder:f.gen?G[f.gen]():f.ph,maxlength:f.max||1500});if(f.rows)el.rows=f.rows;else el.type="text";el.value=S.d[f.k]||"";el.addEventListener("input",()=>{S.d[f.k]=el.value;save();live()})}
+  el.setAttribute("aria-label",f.label);return h("label",{class:"fld"},h("span",{class:"lab",text:f.label}),el)}
+const box=(fn,label)=>{const pre=h("pre",{"data-live":"1"});pre._fn=fn;pre.textContent=fn();return h("div",{class:"box"},h("header",null,label,h("button",{type:"button",text:"Copy",onclick:()=>copy(fn())})),pre)};
+let liveEls={};
+function live(){ // refresh what depends on the answers, without touching the fields
+  document.querySelectorAll("pre[data-live]").forEach(p=>{const t=p._fn();if(p.textContent!==t)p.textContent=t});
+  if(liveEls.prev){liveEls.prev.innerHTML="";const s=STEPS.find(x=>x.id===cur);liveEls.prev.append(SL[s.id]());if(cur==="s1")liveEls.prev.append(SL.cover());fit(liveEls.prev)}
+  if(liveEls.checks){const w=warns(STEPS.find(x=>x.id===cur));liveEls.checks.className="checks"+(w.length?"":" good");liveEls.checks.innerHTML="";liveEls.checks.append(h("b",{text:w.length?"Worth a second look":"Coherence check"}),w.length?h("ul",null,w.map(x=>h("li",{text:x}))):h("span",{text:"Nothing to flag on this step."}))}
+  head()}
+function head(){const vs=visible(),done=vs.filter(s=>fill(s)>=.99).length;$("pill").textContent=done+" of "+vs.length+" steps complete";$("mt").style.width=100*vs.reduce((a,s)=>a+fill(s),0)/vs.length+"%";
+  document.querySelectorAll(".st").forEach(b=>{const s=STEPS.find(x=>x.id===b.dataset.id),f=fill(s);b.classList.toggle("full",f>=.99);b.classList.toggle("part",f>0&&f<.99);b.querySelector("i").textContent=f>=.99?"✓":b.dataset.n})}
+const fresh=()=>!S.example&&!S.logo&&Object.keys(S.d).filter(k=>!["c1","c2","c3","font"].includes(k)&&(S.d[k]||"").trim()).length===0;
+function render(){document.body.classList.toggle("ex",!!S.example);
+  $("tB").setAttribute("aria-current",view==="build");$("tD").setAttribute("aria-current",view==="deck");$("dE").setAttribute("aria-pressed",S.depth==="ess");$("dF").setAttribute("aria-pressed",S.depth==="full");
+  const m=$("main");m.innerHTML="";liveEls={};const vs=visible();if(!vs.find(s=>s.id===cur))cur=vs[0].id;
+  if(view==="deck"){const d=h("div",{class:"deck"},deck());
+    m.append(h("div",{class:"band"},h("h2",{text:"Your playbook"}),h("p",{text:"Every step is one slide, in your colours. Empty parts show in grey: fill them, or switch to the essential playbook to leave them out."})),
+     h("div",{class:"share"},
+      h("div",{class:"sb"},h("b",{text:"Download as a PDF deck"}),h("p",{text:"Opens the print window. Choose \"Save as PDF\": each slide becomes one landscape page, ready to present or to open in PowerPoint or Google Slides."}),h("button",{type:"button",class:"btn gold",text:"Save the deck as PDF",onclick:()=>window.print()})),
+      h("div",{class:"sb"},h("b",{text:"Share by email"}),h("p",{text:"Opens an email with a short message. Attach the PDF or the playbook file yourself."}),h("button",{type:"button",class:"btn main",text:"Open an email",onclick:()=>{location.href="mailto:?subject="+encodeURIComponent("Brand playbook: "+NAME())+"&body="+encodeURIComponent("Hello,\n\nHere is the brand playbook for "+NAME()+(v("version")?" ("+v("version")+")":"")+".\n\nIt covers who we talk to, what we stand for, how we speak and how we apply it."+(v("review")?" It is reviewed: "+v("review").toLowerCase()+".":"")+"\n\nPlease read it before you write or design anything for the brand, and tell me what is unclear.\n\nThank you")}})),
+      h("div",{class:"sb"},h("b",{text:"Keep working on it"}),h("p",{text:"The playbook file holds everything, logo included. Reopen it here later, or send it to a colleague to complete."}),h("button",{type:"button",class:"btn",text:"Save the playbook file",onclick:saveFile})),
+      h("div",{class:"sb"},h("b",{text:"Voice card for AI assistants"}),h("p",{text:"Paste it at the start of a conversation so that what the assistant writes stays in your voice."}),h("button",{type:"button",class:"btn",text:"Copy the voice card",onclick:()=>copy(G.voice(),"Voice card copied")}))),d);fit(d);head();return}
+  const st=STEPS.find(s=>s.id===cur),i=vs.indexOf(st),nav=h("aside",{class:"steps","aria-label":"Steps"});let g=-1;
+  vs.forEach((s,n)=>{if(s.g!==g){g=s.g;nav.append(h("div",{class:"grp",text:GROUPS[g]}))}nav.append(h("button",{type:"button",class:"st","data-id":s.id,"data-n":String(n+1),"aria-current":s.id===cur,onclick:()=>{cur=s.id;render();window.scrollTo({top:$("main").offsetTop-10})}},h("i",{text:String(n+1)}),h("b",{text:s.t})))});
+  liveEls.checks=h("div",{class:"checks"});liveEls.prev=h("div",{style:"display:grid;gap:12px"});
+  const p=st.prompt?box(st.prompt,"Prompt for your AI assistant"):null;
+  const panel=h("section",{class:"panel"},h("div",{class:"row"},h("span",{class:"lab",text:GROUPS[st.g]+" · step "+(i+1)+" of "+vs.length}),st.ess?null:h("span",{class:"lab sp",text:"Full playbook only"})),h("h2",{text:st.t}),h("p",{class:"lead",text:st.lead}),
+    st.id==="s7"?h("p",{class:"hint",text:"For "+(v("aud").toLowerCase()||"[your audience]")+"..."}):null,
+    st.f.map(f=>field(f,st)),(st.out||[]).map(([k,l])=>box(G[k],l)),liveEls.checks,p?[h("p",{class:"hint",text:"Stuck? Copy this prompt into your AI assistant, then bring back what rings true. Check every fact: you are the source."}),p]:null,
+    h("div",{class:"row"},i>0?h("button",{type:"button",class:"btn",text:"Back",onclick:()=>{cur=vs[i-1].id;render()}}):null,i<vs.length-1?h("button",{type:"button",class:"btn main sp",text:"Next: "+vs[i+1].t,onclick:()=>{cur=vs[i+1].id;render();window.scrollTo({top:$("main").offsetTop-10})}}):h("button",{type:"button",class:"btn gold sp",text:"See my playbook",onclick:()=>{view="deck";render();window.scrollTo({top:0})}})));
+  m.append(fresh()?h("div",{class:"welcome"},h("div",null,h("b",{text:"New here? Look at a finished playbook first."}),h("span",{text:"The example is a made-up brand, filled in from start to finish. It never touches your own work."})),h("div",{class:"row"},h("button",{type:"button",class:"btn gold",text:"See an example",onclick:example}),h("span",{style:"color:rgba(255,255,255,.75);font-size:.9rem",text:"or just start below with your logo"}))):null,
+    h("div",{class:"build"},nav,panel,h("aside",{class:"prev"},h("small",{text:"Your slide, live"}),liveEls.prev)));live()}
+
+// ---------- files ----------
+function download(blob,name){const a=h("a",{href:URL.createObjectURL(blob),download:name});document.body.appendChild(a);a.click();a.remove()}
+function saveFile(){download(new Blob([JSON.stringify({app:"brand-playbook",version:1,saved:stamp(),state:{d:S.d,logo:S.logo,depth:S.depth}})],{type:"application/json"}),"brand-playbook-"+(slug(NAME())||"brand")+"-"+stamp()+".json");$("saved").textContent="Playbook file saved on "+stamp()}
+function openFile(file){const r=new FileReader();r.onload=()=>{let o;try{o=JSON.parse(r.result)}catch(e){o=null}if(!o||o.app!=="brand-playbook"||!o.state||typeof o.state.d!=="object"){toast("This file is not a brand playbook");return}
+  if(!fresh()&&!S.example&&!confirm("Replace the playbook currently on screen with the one from this file?"))return;S=normalize(o.state);S.example=false;cur="s1";view="build";save();render();$("saved").textContent="Playbook opened: "+NAME()};r.readAsText(file)}
+let mine=null;
+function example(){if(!S.example)mine=S;S=normalize(EXAMPLE());S.example=true;cur="s1";view="deck";render();window.scrollTo({top:0})}
+function leaveExample(){S=mine||normalize(store.get("bp-state",null)||BLANK());mine=null;S.example=false;cur="s1";view="build";render();window.scrollTo({top:0})}
+$("exB").addEventListener("click",example);$("ribX").addEventListener("click",leaveExample);
+$("saveF").addEventListener("click",saveFile);$("openF").addEventListener("click",()=>$("file").click());
+$("file").addEventListener("change",e=>{if(e.target.files[0])openFile(e.target.files[0]);e.target.value=""});
+$("tB").addEventListener("click",()=>{view="build";render()});$("tD").addEventListener("click",()=>{view="deck";render()});
+$("dE").addEventListener("click",()=>{S.depth="ess";save();render()});$("dF").addEventListener("click",()=>{S.depth="full";save();render()});
+window.addEventListener("resize",()=>fit(document));
+render();
+</script>
+</body>
+</html>
