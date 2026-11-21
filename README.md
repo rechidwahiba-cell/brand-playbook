@@ -7,14 +7,14 @@ Answer simple questions about your brand and leave with a playbook your whole te
 ## Two depths
 
 - **Essential playbook, 11 steps**: identity, audience, foundations, positioning, personality, tone of voice, story, key messages, channels and rollout
-- **Full playbook, 24 steps**: adds the starting point, competitors and a positioning map, proof, brand architecture, red lines, visual rules, social media, blog, email style, ready-to-use texts, an ambassador kit, a voice card for AI assistants and governance
+- **Full playbook, up to 26 steps**: adds the starting point, the B2B decision roles, one voice in different situations, competitors and a positioning map, proof, brand architecture, red lines, visual rules, social media, blog, email style, ready-to-use texts, an ambassador kit, a voice card for AI assistants and governance
 
 ## What it covers
 
-- **What exists**: logo, photos, colours, typefaces, context and objective, how the brand is seen today and how you want it to be seen
-- **Who we talk to**: one or two audiences with their persona, the alternatives, and a positioning map on two axes you name
+- **What exists**: logo, photos, colours, typefaces, context and objective, who you sell to (B2B, B2C, both, public sector, non-profit, personal brand), the faces of the brand (commercial, corporate, employer), where it operates and in which languages, how the brand is seen today and how you want it to be seen
+- **Who we talk to**: one or two audiences with their persona, the people who share a B2B decision, the alternatives, and a positioning map on two axes you name
 - **Who we are**: mission, vision, promise, values, a fill-in positioning statement, proof, brand architecture
-- **How we speak**: personality, tone on four scales, real sentences we say and never say, before and after rewrites, red lines, brand story, tagline, hooks and key messages
+- **How we speak**: personality, tone on four scales, real sentences we say and never say, before and after rewrites, the tone for each situation (website, social media, sales proposal, press release, job advert, customer service, difficult moment), red lines and the rules of your sector, how the name is written, brand story, tagline, hooks and key messages
 - **How we apply it**: visual rules, channels and content pillars, social media, blog, email style, ready-to-use texts, ambassador kit, governance and a six-month rollout
 
 ## The brand compass
