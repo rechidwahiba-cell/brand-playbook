@@ -4,29 +4,44 @@ Try it: **[rechidwahiba-cell.github.io/brand-playbook](https://rechidwahiba-cell
 
 Answer simple questions about your brand and leave with a playbook your whole team can use. The slides build themselves in your own colours as you type.
 
+## Two depths
+
+- **Essential playbook, 11 steps**: identity, audience, foundations, positioning, personality, tone of voice, story, key messages, channels and rollout
+- **Full playbook, 24 steps**: adds the starting point, competitors and a positioning map, proof, brand architecture, red lines, visual rules, social media, blog, email style, ready-to-use texts, an ambassador kit, a voice card for AI assistants and governance
+
 ## What it covers
 
-- **What exists**: logo, colours, type, context and objective, how the brand is seen today and how you want it to be seen
-- **Who we talk to**: priority audience, persona, alternatives and the space you take
-- **Who we are**: mission, vision, promise, values, positioning, proof, brand architecture
-- **How we speak**: personality, tone of voice with real sentences, red lines, brand story, tagline, hooks and key messages
-- **How we apply it**: visual rules, channels and content pillars, ready-to-use texts, an ambassador kit, governance and a six-month rollout
+- **What exists**: logo, photos, colours, typefaces, context and objective, how the brand is seen today and how you want it to be seen
+- **Who we talk to**: one or two audiences with their persona, the alternatives, and a positioning map on two axes you name
+- **Who we are**: mission, vision, promise, values, a fill-in positioning statement, proof, brand architecture
+- **How we speak**: personality, tone on four scales, real sentences we say and never say, before and after rewrites, red lines, brand story, tagline, hooks and key messages
+- **How we apply it**: visual rules, channels and content pillars, social media, blog, email style, ready-to-use texts, ambassador kit, governance and a six-month rollout
 
-Two depths: an essential playbook of 11 steps, or the full one of 21.
+## The brand compass
+
+Personality is chosen on a model made for this tool. Two questions, head or heart and calm or spark, place eight characters around a compass: the Trailblazer, the Enthusiast, the Companion, the Host, the Anchor, the Maker, the Guide and the Challenger. Each one comes with how it sounds, what it does best and what to watch out for.
 
 ## What makes it more than a template
 
-- **A live deck**: every step is a slide, themed with your logo and colours, exported as a landscape PDF
+- **A live deck**: every step is a slide, themed with your logo, photos, colours and typefaces
+- **Generated slides**: a colour system with tints, RGB values and readability advice, a type system, a mood board, a one-page summary
+- **Diagrams**: the compass, the positioning map, the channel map, tone scales, big-number proof, a naming tree, a rollout timeline, mock-ups of a post and an email
 - **Coherence checks**: a promise with no proof, a value with no behaviour, a positioning with no difference, a main colour too light to read
 - **A voice card for AI assistants**: one text to paste into ChatGPT, Claude, Gemini or Copilot so that what they write stays in your voice
 - **Prompts filled with your answers** for the steps where people get stuck
 - **An example** of a made-up brand, filled in from start to finish
 
+## Exports
+
+- **PDF**: the exact design, one slide per landscape page
+- **PowerPoint**: every text as an editable box in a simpler layout, with the logo, colours, typefaces, photos and diagrams
+- **Playbook file**: everything, to reopen later or pass to a colleague
+
 ## How it works
 
-A single HTML file with no framework, no build step and no server. Everything, including the logo, stays in the browser and can be saved to a file. Nothing is sent anywhere.
+A single HTML file with no framework, no build step and no server. Everything, including the logo and the photos, stays in the browser and can be saved to a file. The PDF comes from the browser's print function and the PowerPoint file is built in the browser. If you pick a Google font, the browser loads it from Google: nothing else leaves your computer.
 
-It does not replace a designer's brand charter: it records the decisions around it.
+It does not replace a designer's brand charter: it records the decisions around it. The drawings in the example stand in for photos.
 
 By W.R., built with an AI coding assistant.
 
